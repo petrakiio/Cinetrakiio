@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTrakio</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/banner.css">
+    <link rel="stylesheet" href="/CSS/menu.css">
+
+    <style>
+        /* ESTILO DA INTRO */
+        .intro-overlay{
+            position:fixed; inset:0;
+            display:flex; align-items:center; justify-content:center;
+            background:#0b0b0b; z-index:9999; overflow:hidden;
+        }
+        .logo-wrap{
+            transform-origin:center center;
+            animation:logo-appear 0.9s cubic-bezier(.22,.9,.39,1) forwards,
+                     logo-hold 0.35s linear 0.9s forwards,
+                     logo-exit 0.55s ease-in 1.25s forwards;
+        }
+        .logo{
+            font-weight:900;
+            font-size: 18vmin;
+            color:#e50914;
+            line-height:1;
+            text-rendering:optimizeLegibility;
+            -webkit-font-smoothing:antialiased;
+            filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+        }
+        .skip-btn{
+            position:fixed; top:18px; right:18px; z-index:10001;
+            background: rgba(255,255,255,0.06);
+            color:#fff; border:1px solid rgba(255,255,255,0.08);
+            padding:8px 12px; border-radius:8px; cursor:pointer;
+        }
+
+        @keyframes logo-appear {
+          0%{ transform: scale(18); opacity:0; }
+          50%{ transform: scale(9.9); opacity:1; }
+          100%{ transform: scale(1); opacity:1; }
+        }
+        @keyframes logo-hold {
+          0%{ transform: scale(1); opacity:1; }
+          100%{ transform: scale(1); opacity:1; }
+        }
+        @keyframes logo-exit {
+          0%{ transform: scale(1); opacity:1; }
+          40%{ transform: scale(0.85); opacity:0.9; }
+          100%{ transform: scale(0.08); opacity:0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay da intro -->
+    <div class="intro-overlay" id="intro">
+        <button class="skip-btn" id="skip">Pular intro</button>
+        <div class="logo-wrap" id="logoWrap">
+            <div class="logo" id="logoChar">C</div>
+        </div>
+    </div>
+
+    <!-- Menu de navegação -->
+    <header>
+        <div class="tab">
+            <a href="layout.html">Início</a>
+            <a href="login.html">Login</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="novidades.html">Novidades</a>
+        </div>
+    </header>
+
+    <!-- Título do site -->
+    <header>
+        <h1>CineTrakio🍿</h1>
+    </header>
+
+    <!-- Campo de busca -->
+    <form>
+        <input type="text" id="pesquisa" placeholder="Buscar filmes">
+    </form>
+
+    <!-- Banner automático -->
+    <div class="sliderAutoTrakio">
+        <img src="/Imagens/ação/ate o ultimo homem.jpg" class="slide ativo">
+        <img src="/Imagens/comedia/gente grande 2.jpg" class="slide">
+        <img src="/Imagens/animação/os incriveis.jpg" class="slide">
+        <img src="/Imagens/terror/mama.jpg" class="slide">
+    </div>
+
+    <!-- Gêneros -->
+    <div class="gen">
+        <p id="generos">Gêneros</p>
+    </div>
+    <div class="generos">
+        <a href="/HTML/comedia.html">Comédia</a>
+        <a href="/HTML/acao.html">Ação</a>
+        <a href="/HTML/terror.html">Terror</a>
+        <a href="/HTML/brasileiro.html">Brasileiro</a>
+        <a href="/HTML/romance.html">Romance</a>
+        <a href="/HTML/animacao.html">Animação</a>
+        <a href="/HTML/ficcao.html">Ficção</a>
+    </div>
+
+    <!-- Galeria estilo Netflix -->
+    <h2 class="categoria">Filmes Populares</h2>
+    <div class="linha-filmes">
+        <div class="filme"><a href="/HTML/generosP/Ação/durodematar.html"><img src="/Imagens/ação/duro de matar.jpg" alt="duro de matar"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Braseleiro/maniacoP.html"><img src="/Imagens/brasileiro/maniaco do parque.jpg" alt="brasileiro"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Ficção/jurasicpark.html"><img src="/Imagens/ficção/jurassic park.jpg" alt="jurassic"></a></div>
+        <div class="filme"><a href="#"><img src="/Imagens/romance/Orgulho e preconceito.webp" alt="romance"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Ação/clube_luta.html"><img src="/Imagens/ação/clube da luta.webp" alt="luta"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Ficção/guardioes.html"><img src="/Imagens/ficção/guardião.webp" alt="ficção"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Romance/mechamepelonome.html"><img src="/Imagens/romance/Me chame pelo seu nome.webp" alt=""></a></div>
+    </div>
+
+    <h2 class="categoria">Novidades</h2>
+    <div class="linha-filmes">
+        <div class="filme"><a href="/HTML/generosP/Comedia/6ridiculos.html"><img src="/Imagens/comedia/Os 6 ridiculos.jpg" alt="6 ridiculos"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Romance/lembranças.html"><img src="/Imagens/romance/Lembranças.webp" alt="romance"></a></div>
+        <div class="filme"><a href="/HTML/generosP/terror/corra.html"><img src="/Imagens/terror/Corra!.webp" alt="terror"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Animação/ospequeninos.html"><img src="/Imagens/animação/os pequeninos.webp" alt="animação"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Romance/orgulho&preconceito.html"><img src="/Imagens/romance/Orgulho e preconceito.webp" alt="Romance"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Comedia/virgem40.html"><img src="/Imagens/comedia/O virgem aos 40.webp" alt="Comedia"></a></div>
+        <div class="filme"><a href="/HTML/generosP/Animação/noiva.html"><img src="/Imagens/animação/a noiva cadaver.jpg" alt="animacao"></a></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/javascript/banner.js"></script>
+    <script src="/javascript/login.js"></script>
+
+    <!-- Script da intro -->
+    <script>
+    (function(){
+      const intro = document.getElementById('intro');
+      const logoWrap = document.getElementById('logoWrap');
+      const skipBtn = document.getElementById('skip');
+
+      function endIntro(){
+        intro.style.transition = 'opacity .25s linear';
+        intro.style.opacity='0';
+        setTimeout(()=> intro.remove(), 260);
+        document.body.style.overflow='auto';
+      }
+
+      skipBtn.addEventListener('click', ()=>{
+        logoWrap.style.animation='none';
+        logoWrap.style.transform='scale(0.08)';
+        logoWrap.style.opacity='0';
+        endIntro();
+      });
+
+      logoWrap.addEventListener('click', ()=> skipBtn.click());
+
+      // fim natural: tempo total da animação = 0.9 + 0.35 + 0.55 = 1.8s
+      setTimeout(endIntro, 1800);
+
+      document.body.style.overflow='hidden';
+    })();
+    </script>
+</body>
+
+<!-- Rodapé -->
+<footer>
+    <table>
+        <tr>
+            <td><a href="aviso.html">Políticas de Privacidade</a></td>
+            <td><a href="aviso.html">Proteção de dados</a></td>
+            <td><a href="aviso.html">Contato</a></td>
+            <td><a href="aviso.html">Suporte</a></td>
+            <td><a href="aviso.html">Políticas do Usuário</a></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Siga nós para novidades</p><br>
+                <p>👉</p>
+            </td>
+            <td>
+                <a href="https://www.instagram.com/pe.zrd/"><img src="/Imagens/redes sociais/instagran.png" alt="instagram" id="imageinsta"></a>
+            </td>
+            <td>
+                <a href="https://www.tiktok.com/@petrakiio"><img src="/Imagens/redes sociais/tik tok.webp" alt="tiktok" id="imageinsta"></a>
+            </td>
+            <td>
+                <a href="https://discord.com/discovery/quests#1333839522189938740"><img src="/Imagens/redes sociais/discord.png" alt="discord" id="imageinsta"></a>
+            </td>
+            <td>
+                <a href="https://www.xbox.com/en-US/play/user/Groxmc2463"><img src="/Imagens/redes sociais/xbox.png" alt="xbox" id="imageinsta"></a>
+            </td>
+        </tr>
+    </table>
+</footer>
+</html>

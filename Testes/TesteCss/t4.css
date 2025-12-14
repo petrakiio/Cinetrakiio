@@ -1,0 +1,147 @@
+/* ================== GUIAS ================== */
+.tab {
+  display: flex;
+  border-bottom: 1px solid black;
+  background-color: black;
+}
+
+.tab a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-right: 2px solid red;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.tab a:last-child {
+  border-right: none;
+}
+
+.tab a:hover {
+  background-color: #cc0000;
+}
+
+/* ================== SLIDER ================== */
+.sliderAutoTrakio .slide {
+  display: none;
+}
+
+.sliderAutoTrakio .slide.ativo {
+  display: block;
+}
+
+/* ================== IMAGENS E VÍDEOS ================== */
+.mediaImg {
+  max-width: 100%;
+  display: block;
+  width: 250px;
+  height: 350px;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mediaImg:hover {
+  transform: scale(1.05);
+}
+
+.mediaImg.oculto {
+  display: none;
+}
+
+.mediaVideo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Mantém proporção */
+  display: none;
+  border-radius: 12px;
+}
+
+.mediaVideo.ativo {
+  display: block;
+}
+
+.visivel {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ================== GALERIA DE FILMES ================== */
+.linha-filmes {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 10px 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.linha-filmes::-webkit-scrollbar {
+  height: 8px;
+}
+
+.linha-filmes::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.filme {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* ================== ESTILOS VISUAIS ================== */
+body {
+  color: white;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1 {
+  color: red;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.categoria {
+  color: red;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* ================== BOTÕES ================== */
+.toggleMedia,
+.voltarMedia {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  margin: 5px;
+  background-color: red;
+  padding: 5px 10px;
+  border: 1px solid red;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.toggleMedia:hover,
+.voltarMedia:hover {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
+
+/* ================== POSICIONAMENTO ================== */
+.posição {
+  right: 20px;
+  top: 20px;
+  position: absolute;
+}

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intro tipo "Netflix" com C</title>
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --accent:#e50914; /* cor do "C" (vermelho Netflix-like) */
+      --duration-appear: 0.9s;  /* tempo do efeito de aparição + encolhimento */
+      --duration-hold: 0.35s;   /* tempo em que o C fica no tamanho final antes de sumir */
+      --duration-fade: 0.55s;   /* tempo do fade-out / retração final */
+      --total: calc(var(--duration-appear) + var(--duration-hold) + var(--duration-fade));
+      --logo-scale-start: 18;   /* quão gigante começa (ajuste para mais ou menos impacto) */
+    }
+
+    /* reset mínimo */
+    html,body{height:100%;margin:0;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+    body{
+      background:var(--bg);
+      color:#fff;
+      overflow:hidden; /* esconde scroll enquanto a intro roda */
+    }
+
+    /* overlay da intro */
+    .intro-overlay{
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--bg);
+      z-index:9999;
+      pointer-events:auto;
+    }
+
+    /* área do logo */
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transform-origin:center center;
+      will-change: transform, opacity;
+      /* inicia muito grande (scale) e animamos para 1, depois para 0 */
+      animation:
+         logo-appear var(--duration-appear) cubic-bezier(.22,.9,.39,1) 0s forwards,
+         logo-hold var(--duration-hold) linear calc(var(--duration-appear)) forwards,
+         logo-exit var(--duration-fade) ease-in calc(var(--duration-appear) + var(--duration-hold)) forwards;
+    }
+
+    /* o "C" visual */
+    .logo {
+      font-weight:900;
+      font-size: 18vmin; /* responsivo */
+      line-height:1;
+      color:var(--accent);
+      letter-spacing: -0.02em;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transform-origin:center center;
+      display:inline-block;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+    }
+
+    /* pequena variação para um "efeito" na entrada (escala do muito grande até tamanho alvo) */
+    @keyframes logo-appear {
+      0%{
+        transform: scale(var(--logo-scale-start));
+        opacity:0;
+      }
+      50%{
+        transform: scale(calc(var(--logo-scale-start) * 0.55));
+        opacity:1;
+      }
+      100%{
+        transform: scale(1);
+        opacity:1;
+      }
+    }
+    /* mantém (sem mudanças) — placeholder para sincronizar */
+    @keyframes logo-hold {
+      0% { transform: scale(1); opacity:1; }
+      100% { transform: scale(1); opacity:1; }
+    }
+    /* some e encolhe para 0 (efeito tipo "corta para conteúdo") */
+    @keyframes logo-exit {
+      0% { transform: scale(1); opacity:1; }
+      40% { transform: scale(0.85); opacity:0.9; }
+      100% { transform: scale(0.08); opacity:0; }
+    }
+
+    /* botão pular */
+    .skip-btn{
+      position:fixed;
+      right:18px;
+      top:18px;
+      z-index:10001;
+      background: rgba(255,255,255,0.06);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:8px 12px;
+      border-radius:8px;
+      backdrop-filter: blur(6px);
+      cursor:pointer;
+      font-size:0.9rem;
+      transition: transform .12s ease, background .12s;
+    }
+    .skip-btn:active{ transform: scale(.98); }
+    .skip-btn:focus{ outline:2px solid rgba(255,255,255,0.12); }
+
+    /* conteúdo do site (escondido até o fim) */
+    main.app{
+      opacity:0;
+      transform: translateY(8px);
+      transition: opacity .45s ease .05s, transform .45s ease .05s;
+      min-height:100vh;
+      padding:40px;
+      box-sizing:border-box;
+    }
+    main.app.visible{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* exemplo de conteúdo */
+    .hero{
+      max-width:1100px;
+      margin:40px auto;
+      text-align:center;
+    }
+    .hero h1{ font-size: clamp(2rem, 6vw, 3.2rem); margin:0 0 12px; }
+    .hero p{ font-size:1.05rem; color: #d6d6d6; margin:0 0 24px; }
+    .card-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-top:24px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:14px;
+      padding:18px;
+      min-height:140px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+    /* se usuário quiser pular antes: esconde overflow e remove overlay no JS */
+  </style>
+</head>
+<body>
+  <!-- Overlay da intro -->
+  <div class="intro-overlay" id="intro">
+    <button class="skip-btn" id="skip">Pular intro</button>
+    <div class="logo-wrap" id="logoWrap" aria-hidden="true" role="img" aria-label="Logo animado">
+      <!-- Usamos letra C grande. Pode trocar por SVG se quiser forma personalizada -->
+      <div class="logo" id="logoChar">C</div>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="app" id="appContent" tabindex="-1">
+    <div class="hero">
+      <h1>Bem-vindo ao site</h1>
+      <p>Conteúdo do site aparece aqui depois da intro. Customize como quiser.</p>
+
+      <div class="card-grid">
+        <div class="card"><strong>Item 1</strong><p>Exemplo de cartão.</p></div>
+        <div class="card"><strong>Item 2</strong><p>Exemplo de cartão.</p></div>
+        <div class="card"><strong>Item 3</strong><p>Exemplo de cartão.</p></div>
+        <div class="card"><strong>Item 4</strong><p>Exemplo de cartão.</p></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const intro = document.getElementById('intro');
+      const logoWrap = document.getElementById('logoWrap');
+      const skipBtn = document.getElementById('skip');
+      const app = document.getElementById('appContent');
+
+      // tempo total da animação baseado nas variáveis CSS (fallback se o navegador não suportar calc)
+      const style = getComputedStyle(document.documentElement);
+      function parseSec(s){
+        if(!s) return 0;
+        return parseFloat(s);
+      }
+      const dAppear = parseSec(style.getPropertyValue('--duration-appear')) || 0.9;
+      const dHold = parseSec(style.getPropertyValue('--duration-hold')) || 0.35;
+      const dFade = parseSec(style.getPropertyValue('--duration-fade')) || 0.55;
+      const totalMs = (dAppear + dHold + dFade) * 1000;
+
+      // função para terminar a intro e revelar conteúdo
+      function endIntro(){
+        if (!intro) return;
+        // remove overlay do fluxo (fade out já feito via animação)
+        intro.style.pointerEvents = 'none';
+        intro.style.transition = 'opacity .25s linear';
+        intro.style.opacity = '0';
+        setTimeout(() => {
+          intro.remove();
+          // liberar scroll e mostrar conteúdo
+          document.body.style.overflow = '';
+          app.classList.add('visible');
+          app.focus();
+        }, 260);
+      }
+
+      // ligar evento no botão pular
+      skipBtn.addEventListener('click', function(){
+        // força encurtar animação: aplica transform para finalizar
+        logoWrap.style.animation = 'none';
+        // aplica transform final (menor e invisível) para simular corte
+        logoWrap.style.transform = 'scale(0.08)';
+        logoWrap.style.opacity = '0';
+        // depois limpa overlay
+        setTimeout(endIntro, 160);
+      });
+
+      // se quiser permitir clicar no logo para pular:
+      logoWrap.addEventListener('click', function(){
+        skipBtn.click();
+      });
+
+      // fim natural: aguarda o tempo total e encerra
+      let ended = false;
+      setTimeout(()=> {
+        if(ended) return;
+        ended = true;
+        endIntro();
+      }, totalMs + 60);
+
+      // acessibilidade: tecla Esc pula a intro
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') skipBtn.click();
+      });
+
+      // mantém o body sem scroll enquanto a intro roda
+      document.body.style.overflow = 'hidden';
+    })();
+  </script>
+</body>
+</html>

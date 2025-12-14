@@ -1,0 +1,80 @@
+body{
+    color: white;
+    background-color: black;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1{
+    color: red;
+    font-size: 25px;
+    text-align: center;
+}
+.site-name{
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.site-name:hover{
+    color: red;
+}
+.site-href{
+    color: transparent;
+}
+.site-position{
+    top: 0px;
+    right: 20px;
+    position: absolute;
+}
+.content {
+  padding: 20px;
+  color: white;              
+  background-color: black;
+}
+.container {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75); /* fundo semi-transparente */
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 60px 40px;
+  border-radius: 8px;
+  margin: auto;
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.6); /* brilho vermelho estilo Netflix */
+  font-family: Arial, sans-serif;
+}
+
+/* Inputs */
+.container input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+}
+.container input:focus {
+  outline: 2px solid #e50914; 
+}
+/* Botão */
+.container button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  background: #e50914;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.container button:hover {
+  background: #f40612;
+}
+.logado{
+    color: red;
+    font-size: 15px
+}

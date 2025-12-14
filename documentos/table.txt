@@ -1,0 +1,35 @@
+/* Tabela principal */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+/* Células e cabeçalho */
+th, td {
+  padding: 12px 20px;
+  text-align: center;
+  word-break: break-word; /* evita quebra de layout */
+}
+
+/* Imagens dentro da tabela */
+table img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsividade: tabela com rolagem horizontal em telas pequenas */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    min-width: 600px; /* largura mínima para manter legibilidade */
+  }
+}

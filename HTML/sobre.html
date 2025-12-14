@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="/CSS/sobre.css">
+    <link rel="stylesheet" href="/CSS/banner.css">
+</head>
+<body>
+       <div class="tab">
+            <a href="/index.html">Início</a>
+            <a href="login.html">Login</a>
+            <a href="novidades.html">Novidades</a>
+        </div>
+        <h1>Sobre CineTrakio</h1>
+            <br>
+        <div>
+        <p>somos um projeto em desenvolvimemto,somos um site voltados pra filmes</p><br>
+        <p>com varios filmes gratis!!</p>
+    </div>
+    <div class="sliderAutoTrakio">
+        <img src="/Imagens/animação/homem aranha.jpg" class="slide ativo">
+        <img src="/Imagens/brasileiro/Estômago.jpg" class="slide">
+        <img src="/Imagens/romance/O paciente inglês.jpg"class="slide">
+        <img src="/Imagens/terror/it a coisa.webp" class="slide">
+        <img src="/Imagens/ficção/lugar silencioso.webp" class="slide">
+        <img src="/Imagens/terror/invocação do mal.png" class="slide">
+        <img src="/Imagens/ficção/o show de trumam.webp" class="slide">
+    </div>
+    <form>
+      <div class="div">
+          <p>faça suas perguntas sobre o site ou feedbeaks</p>
+        <input type="text" placeholder="Perguntar" class="question" id="inputPergunta">
+        <input type="button" value="Enviar" class="question" onclick="document.getElementById('inputPergunta').value = ''; alert('Seu comentário foi recebido');">
+        <input type="button" value="👍" class="feed" onclick="alert('Obrigado,pelo feedbeak positivo, esperamos melhorar e te agradar mais ainda,caro usuário')" >
+        <input type="button" value="👎" class="feed" onclick="alert('Ficamos tristes por não satisfaze-lo nos de uma ideia do que podemos melhorar meu caro usuário?')" >
+      </div>
+    </form><br>
+    <div class="div">
+        <p>Opniões de usuario</p>
+    </div><br>
+    <div class="div">
+        <p id="dev">Em Desenvolvimemto</p>
+    </div>
+    <script src="/javascript/return.js"></script>
+    <script src="/javascript/banner.js"></script>
+</body>
+</html>

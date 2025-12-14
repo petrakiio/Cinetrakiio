@@ -1,0 +1,330 @@
+/* IMPORTANDO FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* ========== BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+/* ========== HEADER / TÍTULOS / TEXTOS ========== */
+h1 {
+  color: white;
+  font-size: 25px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#generos {
+  color: red;
+  font-size: 40px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.categoria {
+  color: red;
+  margin: 30px 0 10px 10px;
+  font-size: 1.5em;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ========== MENU DE NAVEGAÇÃO ========== */
+header {
+  background-color: black;
+  color: white;
+}
+
+/*guias*/
+.tab {
+    display: flex;
+    border-bottom: 1px solid black;
+    background-color: black;
+  }
+  
+  .tab a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;              /* texto branco */
+    border-right: 2px solid red; /* borda vermelha entre as abas */
+    background-color: black;     /* fundo vermelho das abas */
+    border: #990000;
+    border: 5px;
+    transition: 0.3s;
+  }
+  
+  .tab a:last-child {
+    border-right: none;        /* remove borda do último link */
+  }
+  
+  .tab a:hover {
+    background-color: #cc0000; /* vermelho mais escuro no hover */
+  }
+  
+  .tab a.active {
+    background-color: #990000; /* vermelho mais fechado na aba ativa */
+  }
+  
+  .content {
+    padding: 20px;
+    color: white;              /* conteúdo branco pra ficar legível no fundo preto */
+    background-color: black;
+  }
+  /*generos guia*/
+  /* Container das abas centralizado */
+  .generos {
+    display: flex;
+    justify-content: center;      /* centraliza horizontalmente */
+    border-bottom: 1px solid black;
+    background-color: black;
+  }
+  
+  /* Links das abas */
+  .generos a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;                 
+    border-right: 2px solid black;  
+    background-color: black;    
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Remove borda do último link */
+  .generos a:last-child {
+    border-right: none;           
+  }
+  
+  /* Hover */
+  .generos a:hover {
+    background-color: #cc0000;    
+  }
+  
+  /* Aba ativa */
+  .generos a.active {
+    background-color: #660000;    
+  }
+/* ========== BARRA DE PESQUISA ========== */
+#pesquisa {
+  color: #333333;
+  background-color: #ddd;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 8px 15px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* ========== GALERIA DE FILMES========== */
+.linha-filmes {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 10px 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.linha-filmes::-webkit-scrollbar {
+  height: 8px;
+}
+
+.linha-filmes::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.filme {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.filme img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.filme img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== EXTRAS / ESTILIZAÇÃO GERAL ========== */
+.gen {
+  background-color: black;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 8px 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+  color: red;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+  .filme img {
+    width: 180px;
+    height: 260px;
+  }
+
+  #pesquisa {
+    font-size: 16px;
+  }
+
+  .categoria {
+    font-size: 1.2em;
+  }
+  .generos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .filme img {
+    width: 140px;
+    height: 200px;
+  }
+
+  #imageinsta {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* ========== RODAPÉ ========== */
+footer {
+    color: #222;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    border-radius: 25px;
+    text-align: center;
+  }
+  
+  #imageinsta {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+  }
+
+ /* ========== Intro Animada ========== */
+
+/* Overlay que cobre toda a tela */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Wrapper do logo */
+.logo-wrap {
+    transform-origin: center center;
+    animation: logo-appear 0.9s cubic-bezier(.22,.9,.39,1) forwards,
+               logo-hold 0.35s linear 0.9s forwards,
+               logo-exit 0.55s ease-in 1.25s forwards;
+}
+
+/* Letra C com borda branca */
+.logo {
+    font-weight: 900;
+    font-size: 18vmin;
+    color: #e50914; 
+    line-height: 1;
+    font-family: 'Bebas Neue', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    /* contorno branco */
+    -webkit-text-stroke: 1px white;  /* Chrome, Edge, Safari */
+    
+    /* fallback para outros navegadores */
+    text-shadow:
+       1px 0 #fff,
+      -1px 0 #fff,
+       0 1px #fff,
+       0 -1px #fff;
+       
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+}
+
+/* Nome CineTrakio abaixo */
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4vmin;
+    color: #e50914; 
+    margin-top: 20px;
+    opacity: 0;
+    animation: text-fade 0.6s ease forwards;
+    animation-delay: 0.9s; /* aparece junto com o hold do C */
+}
+
+/* Botão pular */
+.skip-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 10001;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Animações do C */
+@keyframes logo-appear {
+    0% { transform: scale(18); opacity: 0; }
+    50% { transform: scale(9.9); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes logo-hold {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes logo-exit {
+    0% { transform: scale(1); opacity: 1; }
+    40% { transform: scale(0.85); opacity: 0.9; }
+    100% { transform: scale(0.08); opacity: 0; }
+}
+
+/* Fade do texto "CineTrakio" */
+@keyframes text-fade {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
