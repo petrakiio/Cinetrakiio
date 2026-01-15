@@ -1,37 +1,35 @@
-/* ===== Container do Slider ===== */
 .sliderAutoTrakio {
   position: relative;
-  width: 90%;          /* ocupa 90% da tela */
-  max-width: 700px;    /* limite máximo */
-  aspect-ratio: 7 / 4; /* mantém proporção 700x400 */
-  margin: 20px auto;   /* centraliza horizontalmente */
+  width: 90%;
+  max-width: 700px;
+  aspect-ratio: 7 / 4;
+  margin: 20px auto;
   overflow: hidden;
   border-radius: 15px;
-  background-color: #000; /* opcional: fundo enquanto carrega imagens */
+  background-color: #000; 
+  transition: background-color 0.5s ease; 
 }
 
-/* ===== Imagens do Slider ===== */
+.sliderAutoTrakio.claro {
+  background-color: #ffffff;
+}
+
 .sliderAutoTrakio img {
   position: absolute;
-  top: 50%;                     /* centraliza vertical */
-  left: 50%;                    /* centraliza horizontal */
-  transform: translate(-50%, -50%); /* centralização exata */
-  width: 100%;                  /* ocupa toda a largura do container */
-  height: auto;                 /* mantém proporção original */
-  max-height: 100%;             /* não ultrapassa altura do slider */
-  object-fit: contain;          /* mostra a imagem inteira sem cortar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  border-radius: 15px;
-  background-color: #000;       /* opcional: fundo preto */
 }
 
-/* ===== Imagem ativa ===== */
 .sliderAutoTrakio .ativo {
   opacity: 1;
   z-index: 1;
 }
-
 /* ===== Responsividade para telas pequenas ===== */
 @media (max-width: 768px) {
   .sliderAutoTrakio {
