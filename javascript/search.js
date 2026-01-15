@@ -1,7 +1,4 @@
 //Barra de pesquisa
-const search = document.getElementById('pesquisa')
-const btn = document.getElementById('btn-search')
-
 const filmes = {
     "Acao": [
         { "id": 1, "nome": "Alerta Vermelho", "img": "../Imagens/ação/alerta vermelho.webp", "link": "./generosP/Ação/alertavermelho.html" },
@@ -103,3 +100,69 @@ const filmes = {
     ]
 }
 
+
+const campoBusca = document.getElementById('pesquisa');
+const containerResultados = document.getElementById('resultados-busca');
+
+
+const elementosParaEsconder = [
+    document.querySelector('.sliderAutoTrakio'),
+    document.querySelector('.gen'),
+    document.querySelector('.generos'),
+    ...document.querySelectorAll('.categoria'),
+    ...document.querySelectorAll('.linha-filmes'),
+    document.querySelector('footer')
+];
+
+campoBusca.addEventListener('input', () => {
+    const termo = campoBusca.value.toLowerCase().trim();
+
+    if (termo === "") {
+        elementosParaEsconder.forEach(el => { if(el) el.style.display = 'block'; });
+        document.querySelectorAll('.linha-filmes').forEach(el => el.style.display = 'flex');
+        containerResultados.innerHTML = "";
+        return;
+    }
+
+    // Esconde o conteúdo original
+    elementosParaEsconder.forEach(el => { if(el) el.style.display = 'none'; });
+
+    let achados = [];
+    for (let genero in filmes) {
+        const filtro = filmes[genero].filter(f => f.nome.toLowerCase().includes(termo));
+        achados = [...achados, ...filtro];
+    }
+
+    renderizarBusca(achados);
+});
+
+function renderizarBusca(lista) {
+    if (lista.length === 0) {
+        containerResultados.innerHTML = `
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; width: 100%; text-align: center;">
+                <h2 style="color: white; font-family: sans-serif;">Não achamos seu filme 😕</h2>
+            </div>`;
+        return;
+    }
+
+    const cards = lista.map(f => {
+        const imgPath = f.img.startsWith('../') ? f.img.substring(3) : f.img;
+        const linkPath = f.link.replace('./', './HTML/');
+
+        return `
+            <div style="width: 180px; margin: 20px; text-align: center; transition: transform 0.3s;">
+                <a href="${linkPath}" style="text-decoration: none; color: white;">
+                    <img src="${imgPath}" style="width: 100%; border-radius: 8px; border: 2px solid #E50914; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                    <p style="margin-top: 10px; font-family: sans-serif; font-size: 14px;">${f.nome}</p>
+                </a>
+            </div>`;
+    }).join('');
+
+    containerResultados.innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center; width: 100%; padding: 40px 0;">
+            <h2 style="color: white; font-family: sans-serif; margin-bottom: 30px; border-bottom: 2px solid #E50914; padding-bottom: 10px;">Encontramos seu filme! 🎬</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
+                ${cards}
+            </div>
+        </div>`;
+}
