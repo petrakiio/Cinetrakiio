@@ -29,6 +29,17 @@ body {
   letter-spacing: 0.3px;
 }
 
+.modo-claro {
+  --bg: #f4f7ff;
+  --bg-soft: #e9efff;
+  --surface: #ffffff;
+  --text: #1c2438;
+  --muted: #68718c;
+  --accent-soft: #c00d17;
+  --border: #cfd8ef;
+  --shadow: 0 10px 24px rgba(25, 38, 66, 0.12);
+}
+
 header {
   position: relative;
   min-height: 88px;
@@ -147,6 +158,14 @@ form {
 .filme img:hover {
   transform: translateY(-6px) scale(1.012);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.42);
+}
+
+.modo-claro header {
+  background: linear-gradient(180deg, #f9fbff, #eef3ff);
+}
+
+.modo-claro .linha-filmes::-webkit-scrollbar-thumb {
+  background-color: #b8c4e3;
 }
 
 @media (max-width: 760px) {

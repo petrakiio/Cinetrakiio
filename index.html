@@ -22,13 +22,16 @@
             <button id="modo">Modo Claro</button>
         </div>
     </header>
-        <!-- Overlay da intro -->
-    <div class="intro-overlay" id="intro">
-    <button class="skip-btn" id="skip">Pular intro</button>
-    <div class="logo-wrap" id="logoWrap">
-    <div class="logo" id="logoChar">C</div>
-    <div class="logo-text">CineTrakio🍿</div>
-    </div>
+    <!-- Tela de carregamento -->
+    <div class="loading-overlay" id="loadingScreen">
+        <div class="loading-card">
+            <div class="loading-logo">CineTrakio🍿</div>
+            <div class="loading-spinner"></div>
+            <div class="loading-track">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+            <p class="loading-text">Carregando <span id="loadingPercent">0%</span></p>
+        </div>
     </div>
 
     <!-- Título do site -->
@@ -67,24 +70,24 @@
     <h2 class="categoria">Filmes Populares</h2>
    <div id="resultados-busca" style="width: 100%;"></div>
     <div class="linha-filmes">
-        <div class="filme"><a href="./HTML/generosP/generos_layout/durodematar.html"><img src="./Imagens/ação/duro de matar.jpg" alt="duro de matar"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/maniacoP.html"><img src="./Imagens/brasileiro/maniaco do parque.jpg" alt="brasileiro"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/jurasicpark.html"><img src="./Imagens/ficção/jurassic park.jpg" alt="jurassic"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="./Imagens/romance/Orgulho e preconceito.webp" alt="romance"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/clube_luta.html"><img src="./Imagens/ação/clube da luta.webp" alt="luta"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/guardioes.html"><img src="./Imagens/ficção/guardião.webp" alt="ficção"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/mechamepelonome.html"><img src="./Imagens/romance/Me chame pelo seu nome.webp" alt=""></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/durodematar.html"><img src="./Imagens/ação/duro de matar.jpg" alt="Duro de Matar"><div class="filme-info"><h3>Duro de Matar</h3><span>Ação</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/maniacoP.html"><img src="./Imagens/brasileiro/maniaco do parque.jpg" alt="Maníaco do Parque"><div class="filme-info"><h3>Maníaco do Parque</h3><span>Brasileiro</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/jurasicpark.html"><img src="./Imagens/ficção/jurassic park.jpg" alt="Jurassic Park"><div class="filme-info"><h3>Jurassic Park</h3><span>Ficção</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="./Imagens/romance/Orgulho e preconceito.webp" alt="Orgulho e Preconceito"><div class="filme-info"><h3>Orgulho e Preconceito</h3><span>Romance</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/clube_luta.html"><img src="./Imagens/ação/clube da luta.webp" alt="Clube da Luta"><div class="filme-info"><h3>Clube da Luta</h3><span>Ação</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/guardioes.html"><img src="./Imagens/ficção/guardião.webp" alt="Guardiões"><div class="filme-info"><h3>Guardiões</h3><span>Ficção</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/mechamepelonome.html"><img src="./Imagens/romance/Me chame pelo seu nome.webp" alt="Me Chame Pelo Seu Nome"><div class="filme-info"><h3>Me Chame Pelo Seu Nome</h3><span>Romance</span></div></a></div>
     </div>
 
     <h2 class="categoria">Novidades</h2>
     <div class="linha-filmes">
-        <div class="filme"><a href="./HTML/generosP/generos_layout/6ridiculos.html"><img src="./Imagens/comedia/Os 6 ridiculos.jpg" alt="6 ridiculos"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/lembranças.html"><img src="./Imagens/romance/Lembranças.webp" alt="romance"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/corra.html"><img src="./Imagens/terror/Corra!.webp" alt="terror"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/ospequeninos.html"><img src="./Imagens/animação/os pequeninos.webp" alt="animação"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="./Imagens/romance/Orgulho e preconceito.webp" alt="Romance"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/virgem40.html"><img src="./Imagens/comedia/O virgem aos 40.webp" alt="Comedia"></a></div>
-        <div class="filme"><a href="./HTML/generosP/generos_layout/noiva.html"><img src="./Imagens/animação/a noiva cadaver.jpg" alt="animacao"></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/6ridiculos.html"><img src="./Imagens/comedia/Os 6 ridiculos.jpg" alt="Os 6 Ridículos"><div class="filme-info"><h3>Os 6 Ridículos</h3><span>Comédia</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/lembranças.html"><img src="./Imagens/romance/Lembranças.webp" alt="Lembranças"><div class="filme-info"><h3>Lembranças</h3><span>Romance</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/corra.html"><img src="./Imagens/terror/Corra!.webp" alt="Corra"><div class="filme-info"><h3>Corra</h3><span>Terror</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/ospequeninos.html"><img src="./Imagens/animação/os pequeninos.webp" alt="Os Pequeninos"><div class="filme-info"><h3>Os Pequeninos</h3><span>Animação</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="./Imagens/romance/Orgulho e preconceito.webp" alt="Orgulho e Preconceito"><div class="filme-info"><h3>Orgulho e Preconceito</h3><span>Romance</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/virgem40.html"><img src="./Imagens/comedia/O virgem aos 40.webp" alt="O Virgem aos 40"><div class="filme-info"><h3>O Virgem aos 40</h3><span>Comédia</span></div></a></div>
+        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/noiva.html"><img src="./Imagens/animação/a noiva cadaver.jpg" alt="A Noiva Cadáver"><div class="filme-info"><h3>A Noiva Cadáver</h3><span>Animação</span></div></a></div>
     </div>
 
     <!-- Scripts -->
@@ -119,7 +122,7 @@
                 <a href="https://discord.com/discovery/quests#1333839522189938740"><img src="Imagens/redes sociais/discord.png" alt="discord" id="imageinsta"></a>
             </td>
             <td>
-                <a href="https://www.xbox.com/en-US/play/user/Groxmc2463"><img src="Imagens/redes sociais/xbox.png" alt="xbox" id="imageinsta"></a>
+                <a href="https://www.linkedin.com/in/petrakiio/"><img src="Imagens/redes sociais/link.svg" alt="xbox" id="imageinsta"></a>
             </td>
         </tr>
     </table>

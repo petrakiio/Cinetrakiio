@@ -1,26 +1,53 @@
-    (function(){
-      const intro = document.getElementById('intro');
-      const logoWrap = document.getElementById('logoWrap');
-      const skipBtn = document.getElementById('skip');
+(function () {
+  const loadingScreen = document.getElementById('loadingScreen');
+  const loadingBar = document.getElementById('loadingBar');
+  const loadingPercent = document.getElementById('loadingPercent');
 
-      function endIntro(){
-        intro.style.transition = 'opacity .25s linear';
-        intro.style.opacity='0';
-        setTimeout(()=> intro.remove(), 260);
-        document.body.style.overflow='auto';
-      }
+  if (!loadingScreen || !loadingBar || !loadingPercent) {
+    return;
+  }
 
-      skipBtn.addEventListener('click', ()=>{
-        logoWrap.style.animation='none';
-        logoWrap.style.transform='scale(0.08)';
-        logoWrap.style.opacity='0';
-        endIntro();
-      });
+  document.body.classList.add('lock-scroll');
 
-      logoWrap.addEventListener('click', ()=> skipBtn.click());
+  let progress = 0;
+  let finished = false;
 
-      // fim natural: tempo total da animação = 0.9 + 0.35 + 0.55 = 1.8s
-      setTimeout(endIntro, 1800);
+  const updateLoading = (value) => {
+    progress = Math.min(value, 100);
+    loadingBar.style.width = `${progress}%`;
+    loadingPercent.textContent = `${Math.round(progress)}%`;
+  };
 
-      document.body.style.overflow='hidden';
-    })();
+  const fakeProgress = setInterval(() => {
+    if (progress >= 92) {
+      clearInterval(fakeProgress);
+      return;
+    }
+    updateLoading(progress + Math.random() * 10 + 4);
+  }, 120);
+
+  const closeLoading = () => {
+    if (finished) {
+      return;
+    }
+
+    finished = true;
+    clearInterval(fakeProgress);
+    updateLoading(100);
+
+    setTimeout(() => {
+      loadingScreen.classList.add('hide');
+      document.body.classList.remove('lock-scroll');
+
+      setTimeout(() => {
+        loadingScreen.remove();
+      }, 360);
+    }, 180);
+  };
+
+  window.addEventListener('load', () => {
+    setTimeout(closeLoading, 240);
+  });
+
+  setTimeout(closeLoading, 3200);
+})();

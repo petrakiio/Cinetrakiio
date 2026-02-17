@@ -1,16 +1,33 @@
-const btn = document.getElementById('modo')
-const body = document.body
-const banner = document.getElementById('banner')
+const THEME_KEY = 'cinetrakio-theme';
 
-btn.addEventListener('click', () => {
-   // Alterna a classe no body
-   body.classList.toggle('modo-claro')
-   
-   if (body.classList.contains('modo-claro')){
-    btn.textContent = 'Modo Escuro'
-    banner.classList.add('claro')
-   } else {
-    btn.textContent = 'Modo Claro'
-    banner.classList.remove('claro')
-   }
-})
+const btn = document.getElementById('modo');
+const body = document.body;
+const banner = document.getElementById('banner');
+
+function applyTheme(theme) {
+  const isLight = theme === 'claro';
+  body.classList.toggle('modo-claro', isLight);
+
+  if (banner) {
+    banner.classList.toggle('claro', isLight);
+  }
+
+  if (btn) {
+    btn.textContent = isLight ? 'Modo Escuro' : 'Modo Claro';
+  }
+}
+
+const storedTheme = localStorage.getItem(THEME_KEY);
+if (storedTheme === 'claro' || storedTheme === 'escuro') {
+  applyTheme(storedTheme);
+} else {
+  applyTheme('escuro');
+}
+
+if (btn) {
+  btn.addEventListener('click', () => {
+    const nextTheme = body.classList.contains('modo-claro') ? 'escuro' : 'claro';
+    localStorage.setItem(THEME_KEY, nextTheme);
+    applyTheme(nextTheme);
+  });
+}
