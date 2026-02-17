@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Exterminador do Futuro</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/exterminador do futuro.webp" alt="Pôster do filme Exterminador do Futuro" />
+        <img src="{{ url_for('static', filename='img/ação/exterminador do futuro.webp') }}" alt="Pôster do filme Exterminador do Futuro" />
         <p>
             "Exterminador do Futuro" é um filme de ficção científica e ação que acompanha um ciborgue assassino (Arnold Schwarzenegger)
             enviado do futuro para matar Sarah Connor, a mãe do futuro líder da resistência humana contra as máquinas. 
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     ></iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

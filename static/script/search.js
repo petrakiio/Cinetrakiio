@@ -146,8 +146,8 @@ function renderizarBusca(lista) {
     }
 
     const cards = lista.map(f => {
-        const imgPath = f.img.startsWith('../') ? f.img.substring(3) : f.img;
-        const linkPath = f.link.replace('./', './HTML/');
+        const imgPath = f.img.replace('../Imagens/', '/static/img/');
+        const linkPath = f.link.replace('./', '/');
 
         return `
             <div style="width: 180px; margin: 20px; text-align: center; transition: transform 0.3s;">

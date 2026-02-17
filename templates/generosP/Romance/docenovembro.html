@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Doce Novembro</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Doce Novembro.jpg" alt="Doce Novembro - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Doce Novembro.jpg') }}" alt="Doce Novembro - Filme" />
         <p>
             "Doce Novembro" (2001) é um drama romântico estrelado por Keanu Reeves e Charlize Theron.
             O filme conta a história de Nelson, um publicitário workaholic que conhece Sara, uma mulher livre e cheia de vida que propõe um relacionamento de um mês.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

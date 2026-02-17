@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Orgulho & Preconceito</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
         <h1>Orgulho & Preconceito</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Orgulho e preconceito.webp" alt="Orgulho & Preconceito - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Orgulho e preconceito.webp') }}" alt="Orgulho & Preconceito - Filme" />
         <p>
             "Orgulho & Preconceito" (2005), dirigido por Joe Wright, é uma adaptação do clássico romance de Jane Austen.
             O filme narra a história de Elizabeth Bennet, uma jovem inteligente e independente, e Mr. Darcy, um homem orgulhoso e reservado,
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/comedia/Click.jpg" alt="Click - Filme">
+        <img src="{{ url_for('static', filename='img/comedia/Click.jpg') }}" alt="Click - Filme">
         <p>
             <strong>Click</strong> é uma comédia dramática estrelada por Adam Sandler como Michael Newman, 
             um arquiteto sobrecarregado de trabalho que luta para equilibrar a vida profissional e familiar. 
@@ -38,6 +38,6 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

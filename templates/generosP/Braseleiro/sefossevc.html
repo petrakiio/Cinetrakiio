@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Se Eu Fosse Você</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/brasileiro/Se Eu Fosse Você.jpg" alt="Se Eu Fosse Você - Filme" />
+        <img src="{{ url_for('static', filename='img/brasileiro/Se Eu Fosse Você.jpg') }}" alt="Se Eu Fosse Você - Filme" />
         <p>
             "Se Eu Fosse Você" (2006) é uma comédia brasileira dirigida por Daniel Filho, estrelada por Tony Ramos e Glória Pires.
             O filme conta a história de um casal que, após uma discussão, misteriosamente troca de corpos, levando-os a viver a vida um do outro.
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

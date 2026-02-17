@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Matrix</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/matrix.jpg" alt="Matrix - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/matrix.jpg') }}" alt="Matrix - Filme" />
     <p>
         "Matrix" (1999) é um marco da ficção científica dirigido pelas irmãs Lana e Lilly Wachowski.
         O filme acompanha Thomas Anderson, também conhecido como Neo, um hacker que descobre que o mundo em que vive é na verdade
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

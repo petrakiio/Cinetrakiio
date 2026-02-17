@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Protetor</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/O protetor.webp"/>
+        <img src="{{ url_for('static', filename='img/ação/O protetor.webp') }}"/>
         <p>
             "O Protetor" é um filme de ação lançado em 2014, dirigido por Antoine Fuqua e estrelado por Denzel Washington. 
             A história acompanha Robert McCall, um homem com um passado misterioso que tenta levar uma vida tranquila, 
@@ -36,6 +36,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

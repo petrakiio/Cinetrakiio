@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jojo Rabbit</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/comedia/Jojo rabbit.webp" alt="Jojo Rabbit - Filme">
+        <img src="{{ url_for('static', filename='img/comedia/Jojo rabbit.webp') }}" alt="Jojo Rabbit - Filme">
         <p>
             Jojo Rabbit (2019), dirigido por Taika Waititi, é uma comédia satírica ambientada na Alemanha nazista durante a Segunda Guerra Mundial.
             A história acompanha Jojo, um garoto solitário que é membro da Juventude Hitlerista e tem como amigo imaginário ninguém menos que Adolf Hitler (interpretado pelo próprio Waititi).
@@ -37,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

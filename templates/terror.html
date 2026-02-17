@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terror</title>
-    <link rel="stylesheet" href="../CSS/terror.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/terror.css') }}">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
         <h1>Terror</h1>
         <button id="toggleButton">Desativar</button>
         <div id = "confi">
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -29,48 +29,48 @@
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/terror/abruxa.html">
-                <img src="../Imagens/terror/A bruxa.webp">
+                <img src="{{ url_for('static', filename='img/terror/A bruxa.webp') }}">
             </a>
             <a href="./generosP/terror/entidade.html">
-                <img src="../Imagens/terror/A entidade.jpg">
+                <img src="{{ url_for('static', filename='img/terror/A entidade.jpg') }}">
             </a>
             <a href="./generosP/terror/paranormal.html">
-                <img src="../Imagens/terror/Atividade Paranormal.webp">
+                <img src="{{ url_for('static', filename='img/terror/Atividade Paranormal.webp') }}">
             </a>
             <a href="./generosP/terror/corra.html">
-                <img src="../Imagens/terror/Corra!.webp">
+                <img src="{{ url_for('static', filename='img/terror/Corra!.webp') }}">
             </a>
             <a href="./generosP/terror/hereditario.html">
-                <img src="../Imagens/terror/Hereditario.jpg">
+                <img src="{{ url_for('static', filename='img/terror/Hereditario.jpg') }}">
             </a>
             <a href="./generosP/terror/invocaçaõ.html">
-                <img src="../Imagens/terror/invocação do mal.png">
+                <img src="{{ url_for('static', filename='img/terror/invocação do mal.png') }}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/terror/it.html">
-                <img src="../Imagens/terror/it a coisa.webp">
+                <img src="{{ url_for('static', filename='img/terror/it a coisa.webp') }}">
             </a>
             <a href="./generosP/terror/mama.html">
-                <img src="../Imagens/terror/mama.jpg">
+                <img src="{{ url_for('static', filename='img/terror/mama.jpg') }}">
             </a>
             <a href="./generosP/terror/massacre.html">
-                <img src="../Imagens/terror/massacre da serra eletrica.webp">
+                <img src="{{ url_for('static', filename='img/terror/massacre da serra eletrica.webp') }}">
             </a>
             <a href="./generosP/terror/chuck.html">
-                <img src="../Imagens/terror/o culto de chuck.webp">
+                <img src="{{ url_for('static', filename='img/terror/o culto de chuck.webp') }}">
             </a>
             <a href="./generosP/terror/exorcita.html">
-                <img src="../Imagens/terror/O exorcista.webp">
+                <img src="{{ url_for('static', filename='img/terror/O exorcista.webp') }}">
             </a>
             <a href="./generosP/terror/iluminado.html">
-                <img src="../Imagens/terror/O iluminado.jpg">
+                <img src="{{ url_for('static', filename='img/terror/O iluminado.jpg') }}">
             </a>
         </div>
     </div>
-    <script src="../javascript/terror.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/terror.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

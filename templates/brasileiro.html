@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brasileiro</title>
-    <link rel="stylesheet" href="../CSS/brasileiro.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/brasileiro.css') }}">
 </head>
 <body>
     <header>
         <h1 id="text">brasileiro</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -25,48 +25,48 @@
    <div class="linha-filmes">
     <div class="filme">
         <a href="./generosP/Braseleiro/bacurau.html">
-            <img src="../Imagens/brasileiro/bacurau.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/bacurau.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/areia.html">
-            <img src="../Imagens/brasileiro/capitaes da areia.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/capitaes da areia.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/carandiru.html">
-            <img src="../Imagens/brasileiro/carandiru.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/carandiru.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/central.html">
-            <img src="../Imagens/brasileiro/cemtral brasil.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/cemtral brasil.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/cidadeDeus.html">
-            <img src="../Imagens/brasileiro/cidade de deus.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/cidade de deus.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/estomago.html">
-            <img src="../Imagens/brasileiro/Estômago.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/Estômago.jpg') }}">
         </a>
     </div>
    </div>
    <div class="linha-filmes">
     <div class="filme">
         <a href="./generosP/Braseleiro/maniacoP.html">
-            <img src="../Imagens/brasileiro/maniaco do parque.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/maniaco do parque.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/maepeça.html">
-            <img src="../Imagens/brasileiro/Minha Mãe é uma Peça.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/Minha Mãe é uma Peça.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/palhaço.html">
-            <img src="../Imagens/brasileiro/o palhaço.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/o palhaço.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/reflexoesL.html">
-            <img src="../Imagens/brasileiro/reflexoes de um liquidificador.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/reflexoes de um liquidificador.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/sefossevc.html">
-            <img src="../Imagens/brasileiro/Se Eu Fosse Você.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/Se Eu Fosse Você.jpg') }}">
         </a>
         <a href="./generosP/Braseleiro/sonhoroubados.html">
-            <img src="../Imagens/brasileiro/sonhos roubados.jpg">
+            <img src="{{ url_for('static', filename='img/brasileiro/sonhos roubados.jpg') }}">
         </a>
     </div>
    </div>
-   <script src="../javascript/brasileiro.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+   <script src="{{ url_for('static', filename='script/brasileiro.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

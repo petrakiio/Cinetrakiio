@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Culto de Chucky</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/terror/o culto de chuck.webp" alt="O Culto de Chucky - Filme" />
+        <img src="{{ url_for('static', filename='img/terror/o culto de chuck.webp') }}" alt="O Culto de Chucky - Filme" />
         <p>
             O Culto de Chucky (2017) é o sétimo filme da franquia "Brinquedo Assassino", onde Chucky retorna para aterrorizar Nica Pierce em um hospital psiquiátrico.
             Misturando terror e humor negro, o filme explora a influência maléfica da boneca assassina enquanto Nica luta para provar sua sanidade.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

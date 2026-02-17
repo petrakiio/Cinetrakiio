@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Corra!</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
         <h1>Corra!</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/terror/Corra!.webp" alt="Corra! - Filme" />
+        <img src="{{ url_for('static', filename='img/terror/Corra!.webp') }}" alt="Corra! - Filme" />
         <p>
             Corra! (2017) é um thriller de terror dirigido por Jordan Peele que mistura suspense, crítica social e horror psicológico.
             O filme acompanha Chris, um jovem negro que vai conhecer a família de sua namorada branca em um fim de semana que se revela cada vez mais perturbador.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>A Entidade</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/terror/A entidade.jpg" alt="A Entidade - Filme" />
+        <img src="{{ url_for('static', filename='img/terror/A entidade.jpg') }}" alt="A Entidade - Filme" />
         <p>
             A Entidade (2012) é um filme de terror dirigido por Scott Derrickson que acompanha Ellison Oswalt, um escritor de crimes reais,
             que encontra em sua nova casa uma caixa com vídeos perturbadores que indicam a presença de uma força sobrenatural maléfica.
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

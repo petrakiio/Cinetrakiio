@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comedia</title>
-    <link rel="stylesheet" href="../CSS/comedia.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/comedia.css') }}">
 </head>
 <body>
     <header>
         <h1>Comédia</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -28,48 +28,48 @@
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Comedia/branquelas.html">
-                <img src="../Imagens/comedia/As branquelas.jpeg">
+                <img src="{{ url_for('static', filename='img/comedia/As branquelas.jpeg') }}">
             </a>
             <a href="./generosP/Comedia/click.html">
-                <img src="../Imagens/comedia/Click.jpg">
+                <img src="{{ url_for('static', filename='img/comedia/Click.jpg') }}">
             </a>
             <a href="./generosP/Comedia/deadpool.html">
-                <img src="../Imagens/comedia/DeadPool.png">
+                <img src="{{ url_for('static', filename='img/comedia/DeadPool.png') }}">
             </a>
             <a href="./generosP/Comedia/esposa.html">
-                <img src="../Imagens/comedia/esposa de mentirinhae.jpg">
+                <img src="{{ url_for('static', filename='img/comedia/esposa de mentirinhae.jpg') }}">
             </a>
             <a href="./generosP/Comedia/feriasfrustadas.html">
-                <img src="../Imagens/comedia/ferias frustadas.jpg">
+                <img src="{{ url_for('static', filename='img/comedia/ferias frustadas.jpg') }}">
             </a>
             <a href="./generosP/Comedia/superbad.html">
-                <img src="../Imagens/comedia/SuperBad.webp">
+                <img src="{{ url_for('static', filename='img/comedia/SuperBad.webp') }}">
             </a>
         </div>
     </div>  
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Comedia/gentegrande2.html">
-                <img src="../Imagens/comedia/gente grande 2.jpg">
+                <img src="{{ url_for('static', filename='img/comedia/gente grande 2.jpg') }}">
             </a>
             <a href="./generosP/Comedia/debiloide.html">
-                <img src="../Imagens/comedia/debi$loide.jfif">
+                <img src="{{ url_for('static', filename='img/comedia/debi$loide.jfif') }}">
             </a>
             <a href="./generosP/Comedia/jojorabbit.html">
-                <img src="../Imagens/comedia/Jojo rabbit.webp">
+                <img src="{{ url_for('static', filename='img/comedia/Jojo rabbit.webp') }}">
             </a>
             <a href="./generosP/Comedia/virgem40.html">
-                <img src="../Imagens/comedia/O virgem aos 40.webp">
+                <img src="{{ url_for('static', filename='img/comedia/O virgem aos 40.webp') }}">
             </a>
             <a href="./generosP/Comedia/6ridiculos.html">
-                <img src="../Imagens/comedia/Os 6 ridiculos.jpg">
+                <img src="{{ url_for('static', filename='img/comedia/Os 6 ridiculos.jpg') }}">
             </a>
             <a href="./generosP/Comedia/segurança.html">
-                <img src="../Imagens/comedia/Segurança de guarda.webp">
+                <img src="{{ url_for('static', filename='img/comedia/Segurança de guarda.webp') }}">
             </a>
         </div>
     </div>
-    <script src="../javascript/comedia.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/comedia.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

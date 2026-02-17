@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gladiador</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/gladiador.jpg" alt="Capa do filme Gladiador">
+        <img src="{{ url_for('static', filename='img/ação/gladiador.jpg') }}" alt="Capa do filme Gladiador">
         <p>
             "Gladiador" é um épico de ação lançado em 2000, dirigido por Ridley Scott. 
             O filme acompanha Maximus Decimus Meridius, um general romano traído que se torna escravo e posteriormente um gladiador, 
@@ -38,6 +38,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>    
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

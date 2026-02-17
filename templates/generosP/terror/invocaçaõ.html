@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Invocação do Mal</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/terror/invocação do mal.png" alt="Invocação do Mal - Filme" />
+        <img src="{{ url_for('static', filename='img/terror/invocação do mal.png') }}" alt="Invocação do Mal - Filme" />
         <p>
             Invocação do Mal (2013) é um filme de terror dirigido por James Wan, baseado em fatos reais, que acompanha os investigadores paranormais Ed e Lorraine Warren.
             Eles ajudam uma família aterrorizada por uma presença demoníaca em sua fazenda na década de 1970.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

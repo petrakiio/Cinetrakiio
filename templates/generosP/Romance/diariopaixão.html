@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Diário de uma Paixão</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Diario de uma paixão.jpg" alt="O Diário de uma Paixão - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Diario de uma paixão.jpg') }}" alt="O Diário de uma Paixão - Filme" />
         <p>
             "O Diário de uma Paixão" (2004) é um drama romântico dirigido por Nick Cassavetes, baseado no livro de Nicholas Sparks.
             O filme narra a história de Noah e Allie, um casal apaixonado que enfrenta diferenças sociais e familiares para viver seu amor verdadeiro.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

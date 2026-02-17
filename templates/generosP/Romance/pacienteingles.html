@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Paciente Inglês</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/O paciente inglês.jpg" alt="O Paciente Inglês - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/O paciente inglês.jpg') }}" alt="O Paciente Inglês - Filme" />
         <p>
             "O Paciente Inglês" (1996), dirigido por Anthony Minghella, é um drama romântico ambientado durante a Segunda Guerra Mundial.
             O filme conta a história de um homem gravemente queimado em um acidente de avião, cuja identidade e passado misterioso são revelados através de suas lembranças.
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

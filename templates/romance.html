@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romance</title>
-    <link rel="stylesheet" href="../CSS/romance.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/romance.css') }}">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
         <button id="toggleButton">
             Desativar
         </button>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -30,48 +30,48 @@
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Romance/antesdeamanhecer.html">
-                <img src="../Imagens/romance/Antes de amanhecer.webp">
+                <img src="{{ url_for('static', filename='img/romance/Antes de amanhecer.webp') }}">
             </a>
             <a href="./generosP/Romance/Azuleacormaisquente.html">
-                <img src="../Imagens/romance/Azul é a cor mais quente.jpg">
+                <img src="{{ url_for('static', filename='img/romance/Azul é a cor mais quente.jpg') }}">
             </a>
             <a href="./generosP/Romance/comoperderumhomem.html">
-                <img src="../Imagens/romance/como perder um homem.webp">
+                <img src="{{ url_for('static', filename='img/romance/como perder um homem.webp') }}">
             </a>
             <a href="./generosP/Romance/diariopaixão.html">
-                <img src="../Imagens/romance/Diario de uma paixão.jpg">
+                <img src="{{ url_for('static', filename='img/romance/Diario de uma paixão.jpg') }}">
             </a>
             <a href="./generosP/Romance/docenovembro.html">
-                <img src="../Imagens/romance/Doce Novembro.jpg">
+                <img src="{{ url_for('static', filename='img/romance/Doce Novembro.jpg') }}">
             </a>
             <a href="./generosP/Romance/lembranças.html">
-                <img src="../Imagens/romance/Lembranças.webp">
+                <img src="{{ url_for('static', filename='img/romance/Lembranças.webp') }}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Romance/mechamepelonome.html">
-                <img src="../Imagens/romance/Me chame pelo seu nome.webp">
+                <img src="{{ url_for('static', filename='img/romance/Me chame pelo seu nome.webp') }}">
             </a>
             <a href="./generosP/Romance/naturezaselvagem.html">
-                <img src="../Imagens/romance/Na Natureza Selvagem.jpg">
+                <img src="{{ url_for('static', filename='img/romance/Na Natureza Selvagem.jpg') }}">
             </a>
             <a href="./generosP/Romance/pacienteingles.html">
-                <img src="../Imagens/romance/O paciente inglês.jpg">
+                <img src="{{ url_for('static', filename='img/romance/O paciente inglês.jpg') }}">
             </a>
             <a href="./generosP/Romance/orgulho&preconceito.html">
-                <img src="../Imagens/romance/Orgulho e preconceito.webp">
+                <img src="{{ url_for('static', filename='img/romance/Orgulho e preconceito.webp') }}">
             </a>
             <a href="./generosP/Romance/iloveyou.html">
-                <img src="../Imagens/romance/P.S. Eu Te Amo.jpg">
+                <img src="{{ url_for('static', filename='img/romance/P.S. Eu Te Amo.jpg') }}">
             </a>
             <a href="./generosP/Romance/retrato.html">
-                <img src="../Imagens/romance/Retrato de uma Jovem em Chamas.webp">
+                <img src="{{ url_for('static', filename='img/romance/Retrato de uma Jovem em Chamas.webp') }}">
             </a>
         </div>
     </div>
-    <script src="../javascript/romance.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/romance.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

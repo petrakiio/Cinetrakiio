@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ação</title>
-    <link rel="stylesheet" href="../CSS/acao.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/acao.css') }}">
 </head>
 <body>
 
     <header class="header">
         <h1 id="h1">Ação</h1>
         <div class="righ">
-            <form action="/index.html" method="get">
+            <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -32,48 +32,48 @@
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Ação/alertavermelho.html">
-                <img src="../Imagens/ação/alerta vermelho.webp">
+                <img src="{{ url_for('static', filename='img/ação/alerta vermelho.webp') }}">
             </a>
             <a href="./generosP/Ação/ultimohomen.html">
-                <img src="../Imagens/ação/ate o ultimo homem.jpg">
+                <img src="{{ url_for('static', filename='img/ação/ate o ultimo homem.jpg') }}">
             </a>
             <a href="./generosP/Ação/badboys.html">
-                <img src="../Imagens/ação/bad boys.webp">
+                <img src="{{ url_for('static', filename='img/ação/bad boys.webp') }}">
             </a>
             <a href="./generosP/Ação/clube_luta.html">
-                <img src="../Imagens/ação/clube da luta.webp">
+                <img src="{{ url_for('static', filename='img/ação/clube da luta.webp') }}">
             </a>
             <a href="./generosP/Ação/durodematar.html">
-                <img src="../Imagens/ação/duro de matar.jpg">
+                <img src="{{ url_for('static', filename='img/ação/duro de matar.jpg') }}">
             </a>
             <a href="./generosP/Ação/missaoimpossivel.html">
-                <img src="../Imagens/ação/missão impossivel.jpg">
+                <img src="{{ url_for('static', filename='img/ação/missão impossivel.jpg') }}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme"> 
             <a href="./generosP/Ação/exterminador.html">
-                <img src="../Imagens/ação/exterminador do futuro.webp">
+                <img src="{{ url_for('static', filename='img/ação/exterminador do futuro.webp') }}">
             </a>
             <a href="./generosP/Ação/gladiador.html">
-                <img src="../Imagens/ação/gladiador.jpg">
+                <img src="{{ url_for('static', filename='img/ação/gladiador.jpg') }}">
             </a>
             <a href="./generosP/Ação/johnwick.html">
-                <img src="../Imagens/ação/John Wick.webp">
+                <img src="{{ url_for('static', filename='img/ação/John Wick.webp') }}">
             </a>
             <a href="./generosP/Ação/madmax.html">
-                <img src="../Imagens/ação/Mad Max.jpg">
+                <img src="{{ url_for('static', filename='img/ação/Mad Max.jpg') }}">
             </a>
             <a href="./generosP/Ação/mercenarios.html">
-                <img src="../Imagens/ação/mercenarios.jpg">
+                <img src="{{ url_for('static', filename='img/ação/mercenarios.jpg') }}">
             </a>
             <a href="./generosP/Ação/protetor.html">
-                <img src="../Imagens/ação/O protetor.webp">
+                <img src="{{ url_for('static', filename='img/ação/O protetor.webp') }}">
             </a>
         </div>
     </div>
-    <script src="../javascript/acao.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/acao.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Harry Potter e a Pedra Filosofal</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/harry potter.jpg" alt="Harry Potter e a Pedra Filosofal - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/harry potter.jpg') }}" alt="Harry Potter e a Pedra Filosofal - Filme" />
         <p>
             "Harry Potter e a Pedra Filosofal" (2001) é o primeiro filme da icônica franquia baseada nos livros de J.K. Rowling,
             dirigido por Chris Columbus. A história acompanha Harry Potter, um jovem órfão que descobre aos 11 anos que é um bruxo
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

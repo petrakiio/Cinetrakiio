@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Coraline e o Mundo Secreto</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/coraline.jpg" alt="Coraline e o Mundo Secreto - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/coraline.jpg') }}" alt="Coraline e o Mundo Secreto - Filme" />
         <p>
             "Coraline e o Mundo Secreto" (2009), dirigido por Henry Selick, é um filme de animação stop-motion baseado no livro de Neil Gaiman.
             A história acompanha Coraline, uma garota que descobre uma porta secreta em sua nova casa que a leva a um universo paralelo assustador,
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

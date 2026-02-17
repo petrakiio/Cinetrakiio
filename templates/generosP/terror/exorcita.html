@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Exorcista</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/terror/O exorcista.webp" alt="O Exorcista - Filme" />
+        <img src="{{ url_for('static', filename='img/terror/O exorcista.webp') }}" alt="O Exorcista - Filme" />
         <p>
             O Exorcista (1973) é um dos filmes de terror mais influentes e assustadores da história do cinema.
             Dirigido por William Friedkin, acompanha a luta de um padre para salvar uma jovem garota possuída por uma entidade demoníaca.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

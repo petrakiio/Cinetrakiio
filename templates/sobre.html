@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre</title>
-    <link rel="stylesheet" href="/CSS/sobre.css">
-    <link rel="stylesheet" href="/CSS/banner.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/sobre.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/banner.css') }}">
 </head>
 <body>
        <div class="tab">
-            <a href="/index.html">Início</a>
-            <a href="login.html">Login</a>
-            <a href="novidades.html">Novidades</a>
+            <a href="{{ url_for('home.index') }}">Início</a>
+            <a href="{{ url_for('login.login_page') }}">Login</a>
+            <a href="{{ url_for('home.novidades') }}">Novidades</a>
         </div>
         <h1>Sobre CineTrakio</h1>
             <br>
@@ -20,13 +20,13 @@
         <p>com varios filmes gratis!!</p>
     </div>
     <div class="sliderAutoTrakio">
-        <img src="/Imagens/animação/homem aranha.jpg" class="slide ativo">
-        <img src="/Imagens/brasileiro/Estômago.jpg" class="slide">
-        <img src="/Imagens/romance/O paciente inglês.jpg"class="slide">
-        <img src="/Imagens/terror/it a coisa.webp" class="slide">
-        <img src="/Imagens/ficção/lugar silencioso.webp" class="slide">
-        <img src="/Imagens/terror/invocação do mal.png" class="slide">
-        <img src="/Imagens/ficção/o show de trumam.webp" class="slide">
+        <img src="{{ url_for('static', filename='img/animação/homem aranha.jpg') }}" class="slide ativo">
+        <img src="{{ url_for('static', filename='img/brasileiro/Estômago.jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='img/romance/O paciente inglês.jpg') }}"class="slide">
+        <img src="{{ url_for('static', filename='img/terror/it a coisa.webp') }}" class="slide">
+        <img src="{{ url_for('static', filename='img/ficção/lugar silencioso.webp') }}" class="slide">
+        <img src="{{ url_for('static', filename='img/terror/invocação do mal.png') }}" class="slide">
+        <img src="{{ url_for('static', filename='img/ficção/o show de trumam.webp') }}" class="slide">
     </div>
     <section class="feedback-box div">
       <h2>Avalie o CineTrakio</h2>
@@ -55,9 +55,9 @@
       <ul id="listaFeedback" class="feedback-list"></ul>
       <p id="dev">Nenhum feedback enviado ainda.</p>
     </section>
-    <script src="/javascript/return.js"></script>
-    <script src="/javascript/banner.js"></script>
-    <script src="/javascript/feedback.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/return.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/banner.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/feedback.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

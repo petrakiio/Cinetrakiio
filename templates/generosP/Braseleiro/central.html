@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Central do Brasil</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/brasileiro/cemtral brasil.jpg" alt="Central do Brasil - Filme" />
+        <img src="{{ url_for('static', filename='img/brasileiro/cemtral brasil.jpg') }}" alt="Central do Brasil - Filme" />
         <p>
             Central do Brasil (1998) é um drama brasileiro dirigido por Walter Salles, que conta a história de Dora, uma ex-professora que escreve cartas para analfabetos na estação Central do Brasil no Rio de Janeiro.
             Após uma tragédia, ela decide ajudar um menino chamado Josué a encontrar seu pai no interior do Brasil, iniciando uma jornada de descobertas, amizade e redenção.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

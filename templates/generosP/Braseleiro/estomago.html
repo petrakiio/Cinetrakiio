@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Estômago</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/brasileiro/Estômago.jpg" alt="Estômago - Filme" />
+        <img src="{{ url_for('static', filename='img/brasileiro/Estômago.jpg') }}" alt="Estômago - Filme" />
         <p>
             Estômago (2007) é um premiado filme brasileiro dirigido por Marcos Jorge. A trama acompanha Raimundo Nonato, um homem simples do interior que chega à cidade grande e descobre seu talento na cozinha.
             Ele começa trabalhando em um bar e depois em um restaurante, conquistando reconhecimento por seus dotes culinários. No entanto, sua trajetória o leva à prisão, onde também usa a comida como forma de ascensão.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

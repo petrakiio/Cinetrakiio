@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sonhos Roubados</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/brasileiro/sonhos roubados.jpg" alt="Sonhos Roubados - Documentário" />
+        <img src="{{ url_for('static', filename='img/brasileiro/sonhos roubados.jpg') }}" alt="Sonhos Roubados - Documentário" />
         <p>
             "Sonhos Roubados" (2009) é um documentário brasileiro dirigido por Sandra Werneck e Hilton Lacerda que retrata a vida de adolescentes nordestinos que migram para o Rio de Janeiro em busca de um futuro melhor.
             O filme denuncia o trabalho infantil e as condições difíceis enfrentadas por esses jovens, que muitas vezes são forçados a abandonar seus sonhos para sobreviver.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

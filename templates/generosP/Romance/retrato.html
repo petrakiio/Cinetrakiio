@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Retrato de uma Jovem em Chamas</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Retrato de uma Jovem em Chamas.webp" alt="Retrato de uma Jovem em Chamas - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Retrato de uma Jovem em Chamas.webp') }}" alt="Retrato de uma Jovem em Chamas - Filme" />
         <p>
             "Retrato de uma Jovem em Chamas" (2019), dirigido por Céline Sciamma, é um drama romântico francês que conta a história de Marianne,
             uma pintora contratada para fazer o retrato de Héloïse, uma jovem que está prestes a se casar.
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

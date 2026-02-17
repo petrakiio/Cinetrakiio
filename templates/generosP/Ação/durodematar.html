@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duro de Matar</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/duro de matar.jpg" alt="Pôster do filme Duro de Matar">
+        <img src="{{ url_for('static', filename='img/ação/duro de matar.jpg') }}" alt="Pôster do filme Duro de Matar">
         <p>
             "Duro de Matar" é um clássico filme de ação que acompanha o policial John McClane (Bruce Willis), 
             que enfrenta sozinho um grupo de terroristas que tomou um arranha-céu em Los Angeles durante a noite de Natal. 
@@ -35,7 +35,7 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
     ></iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>
 

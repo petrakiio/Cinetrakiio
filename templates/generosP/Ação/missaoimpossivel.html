@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Missão Impossível: Efeito Fallout</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/missão impossivel.jpg" alt="Capa do filme Missão Impossível: Efeito Fallout" />
+        <img src="{{ url_for('static', filename='img/ação/missão impossivel.jpg') }}" alt="Capa do filme Missão Impossível: Efeito Fallout" />
         <p>
             "Missão Impossível: Efeito Fallout" é o sexto filme da franquia Missão Impossível, lançado em 2018. 
             Dirigido por Christopher McQuarrie, o filme traz Ethan Hunt e sua equipe enfrentando uma ameaça global enquanto lidam com as consequências de uma missão que deu errado. 
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

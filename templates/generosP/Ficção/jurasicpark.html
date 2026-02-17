@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jurassic Park</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/jurassic park.jpg" alt="Jurassic Park - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/jurassic park.jpg') }}" alt="Jurassic Park - Filme" />
     <p>
         "Jurassic Park" (1993) é um clássico da ficção científica e aventura dirigido por Steven Spielberg,
         baseado no livro de Michael Crichton. O filme narra a história do bilionário John Hammond, que cria um parque temático com dinossauros
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

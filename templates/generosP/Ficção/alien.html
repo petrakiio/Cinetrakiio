@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Alien: O 8º Passageiro</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/alien.webp" alt="Alien: O 8º Passageiro - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/alien.webp') }}" alt="Alien: O 8º Passageiro - Filme" />
         <p>
             Alien: O 8º Passageiro" (1979) é um clássico do terror e ficção científica dirigido por <em>Ridley Scott</em>.
             A história acompanha a tripulação da nave comercial Nostromo, que intercepta um pedido de socorro em um planeta distante.
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

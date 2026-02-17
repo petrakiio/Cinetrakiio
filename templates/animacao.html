@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animação</title>
-    <link rel="stylesheet" href="../CSS/animacao.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/animacao.css') }}">
 </head>
 <body>
 
     <header>
         <h1>Animação</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -26,47 +26,47 @@
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Animação/noiva.html">
-                <img src="../Imagens/animação/a noiva cadaver.jpg">
+                <img src="{{ url_for('static', filename='img/animação/a noiva cadaver.jpg') }}">
             </a>
             <a href="./generosP/Animação/castelo.html">
-                <img src="../Imagens/animação/castelo animado.jpg">
+                <img src="{{ url_for('static', filename='img/animação/castelo animado.jpg') }}">
             </a>
             <a href="./generosP/Animação/coraline.html">
-                <img src="../Imagens/animação/coraline.jpg">
+                <img src="{{ url_for('static', filename='img/animação/coraline.jpg') }}">
             </a>
             <a href="./generosP/Animação/eradogelo.html">
-                <img src="../Imagens/animação/era do gelo.webp">
+                <img src="{{ url_for('static', filename='img/animação/era do gelo.webp') }}">
             </a>
             <a href="./generosP/Animação/spiderman.html">
-                <img src="../Imagens/animação/homem aranha.jpg">
+                <img src="{{ url_for('static', filename='img/animação/homem aranha.jpg') }}">
             </a>
             <a href="./generosP/Animação/kungfupanda.html">
-                <img src="../Imagens/animação/kung fu.jpg">
+                <img src="{{ url_for('static', filename='img/animação/kung fu.jpg') }}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme">
             <a href="./generosP/Animação/lorax.html">
-                <img src="../Imagens/animação/lorax.jpg">
+                <img src="{{ url_for('static', filename='img/animação/lorax.jpg') }}">
             </a>
             <a href="./generosP/Animação/incriveis.html">
-                <img src="../Imagens/animação/os incriveis.jpg">
+                <img src="{{ url_for('static', filename='img/animação/os incriveis.jpg') }}">
             </a>
             <a href="./generosP/Animação/ospequeninos.html">
-                <img src="../Imagens/animação/os pequeninos.webp">
+                <img src="{{ url_for('static', filename='img/animação/os pequeninos.webp') }}">
             </a>
             <a href="./generosP/Animação/poragua.html">
-                <img src="../Imagens/animação/por agua abaixo.jpg">
+                <img src="{{ url_for('static', filename='img/animação/por agua abaixo.jpg') }}">
             </a>
             <a href="./generosP/Animação/ratatuli.html">
-                <img src="../Imagens/animação/ratatuli.jpg">
+                <img src="{{ url_for('static', filename='img/animação/ratatuli.jpg') }}">
             </a>
             <a href="./generosP/Animação/upaltas.html">
-                <img src="../Imagens/animação/up altas aventuras.jpg">
+                <img src="{{ url_for('static', filename='img/animação/up altas aventuras.jpg') }}">
             </a>
         </div>
     </div>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

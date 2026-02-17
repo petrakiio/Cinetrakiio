@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Férias Frustradas</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/comedia/ferias frustadas.jpg" alt="Férias Frustradas - Filme">
+        <img src="{{ url_for('static', filename='img/comedia/ferias frustadas.jpg') }}" alt="Férias Frustradas - Filme">
         <p>
             Férias Frustradas (2015) é uma comédia que traz de volta o espírito da clássica franquia "National Lampoon's Vacation".
             O filme acompanha Rusty Griswold (Ed Helms), agora adulto, que decide repetir a viagem de infância ao parque de diversões Walley World com sua esposa (Christina Applegate) e seus dois filhos.
@@ -36,6 +36,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

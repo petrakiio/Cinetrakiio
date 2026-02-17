@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Branquelas</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/comedia/As branquelas.jpeg" alt="As Branquelas">
+        <img src="{{ url_for('static', filename='img/comedia/As branquelas.jpeg') }}" alt="As Branquelas">
         <p>
             <strong>As Branquelas</strong> é uma comédia icônica que acompanha os agentes do FBI Kevin e Marcus (interpretados pelos irmãos Shawn e Marlon Wayans),
             que assumem disfarces inusitados para proteger duas socialites brancas de um possível sequestro. Para isso, eles se transformam fisicamente
@@ -36,7 +36,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>
 

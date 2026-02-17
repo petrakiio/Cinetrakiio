@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Me Chame Pelo Seu Nome</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
         <h1>Me Chame Pelo Seu Nome</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Me chame pelo seu nome.webp" alt="Me Chame Pelo Seu Nome - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Me chame pelo seu nome.webp') }}" alt="Me Chame Pelo Seu Nome - Filme" />
         <p>
             "Me Chame Pelo Seu Nome" (2017) é um drama romântico dirigido por Luca Guadagnino e baseado no romance de André Aciman.
             Ambientado no verão de 1983, no norte da Itália, o filme conta a história do jovem Elio, de 17 anos, que desenvolve uma relação intensa e transformadora com Oliver, um estudante americano hospedado em sua casa.
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

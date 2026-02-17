@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Até o Ultimo homem</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
     </header><br>
     <h2>descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/ate o ultimo homem.jpg">
+        <img src="{{ url_for('static', filename='img/ação/ate o ultimo homem.jpg') }}">
         <p>
             "Até o Último Homem" é um filme de guerra baseado na história real de Desmond Doss, um médico do exército 
             americano que serviu na Segunda Guerra Mundial.
@@ -33,6 +33,6 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
   </iframe>    
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

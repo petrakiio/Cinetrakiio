@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kung Fu Panda</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/kung fu.jpg" alt="Kung Fu Panda - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/kung fu.jpg') }}" alt="Kung Fu Panda - Filme" />
         <p>
             "Kung Fu Panda" (2008), dirigido por Mark Osborne e John Stevenson, é um filme de animação que conta a história de Po,
             um panda desajeitado que sonha em se tornar um mestre de kung fu.
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

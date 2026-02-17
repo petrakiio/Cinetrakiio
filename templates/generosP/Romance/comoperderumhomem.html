@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Como Perder um Homem em 10 Dias</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/como perder um homem.webp" alt="Como Perder um Homem em 10 Dias - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/como perder um homem.webp') }}" alt="Como Perder um Homem em 10 Dias - Filme" />
         <p>
             "Como Perder um Homem em 10 Dias" (2003) é uma comédia romântica estrelada por Kate Hudson e Matthew McConaughey.
             A história acompanha Andie, uma jornalista que tenta espantar um homem em 10 dias para uma matéria, enquanto Ben aposta que consegue fazê-la se apaixonar por ele nesse mesmo período.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

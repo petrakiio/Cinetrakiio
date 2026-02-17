@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Um Lugar Silencioso: Dia Um</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/lugar silencioso.webp" alt="Um Lugar Silencioso: Dia Um - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/lugar silencioso.webp') }}" alt="Um Lugar Silencioso: Dia Um - Filme" />
     <p>
         "Um Lugar Silencioso: Dia Um" (2024) é um spin-off da franquia Um Lugar Silencioso, dirigido por Michael Sarnoski.
         O filme serve como prequela, explorando os eventos iniciais da invasão alienígena que dizimou a população mundial. A história segue Samira "Sam" (interpretada por Lupita Nyong'o), uma mulher com câncer terminal que luta para sobreviver em meio ao caos de Nova York. Ela se junta a Henri (interpretado por Djimon Hounsou) e outros sobreviventes enquanto tentam escapar das criaturas mortais que caçam pelo som.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

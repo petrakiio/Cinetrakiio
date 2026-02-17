@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Na Natureza Selvagem</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Na Natureza Selvagem.jpg" alt="Na Natureza Selvagem - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Na Natureza Selvagem.jpg') }}" alt="Na Natureza Selvagem - Filme" />
         <p>
             "Na Natureza Selvagem" (2007), dirigido por Sean Penn, é baseado em uma história real e no livro homônimo de Jon Krakauer.
             O filme conta a jornada de Christopher McCandless, um jovem recém-formado que decide abandonar sua vida confortável e viajar pelos Estados Unidos em busca de liberdade, autoconhecimento e conexão com a natureza.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

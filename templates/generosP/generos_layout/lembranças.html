@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lembranças</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
         <h1>Lembranças</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/romance/Lembranças.webp" alt="Lembranças - Filme" />
+        <img src="{{ url_for('static', filename='img/romance/Lembranças.webp') }}" alt="Lembranças - Filme" />
         <p>
             "Lembranças" (2010), dirigido por Allen Coulter, é um drama romântico estrelado por Robert Pattinson, Emilie de Ravin, Pierce Brosnan e Chris Cooper.
             O filme conta a história de Tyler, um jovem marcado por uma tragédia familiar, e Ally, uma garota que também carrega feridas do passado.
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

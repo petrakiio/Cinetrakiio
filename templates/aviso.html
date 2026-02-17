@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvimento</title>
-    <link rel="stylesheet" href="/CSS/aviso.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/aviso.css') }}">
 </head>
 <body>
     <h1>
@@ -17,7 +17,7 @@
         <button id="return" class="return">
            <p>Voltar pros Filmes</p>
         </button>
-<script src="/javascript/return.js"></script>
-    <script src="/javascript/theme-global.js"></script>
+<script src="{{ url_for('static', filename='script/return.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

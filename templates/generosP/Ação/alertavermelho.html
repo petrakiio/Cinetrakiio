@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alerta Vermelho</title>
-    <link rel="stylesheet" href="/home/petrakiio/Documentos/Programação/HTML and CSS/Cinetrakiio/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ação/alerta vermelho.webp">
+        <img src="{{ url_for('static', filename='img/ação/alerta vermelho.webp') }}">
         <p>
             Alerta Vermelho é um filme de ação e comédia que acompanha um agente do FBI (Dwayne Johnson)
              que está atrás dos dois criminosos mais procurados do mundo: uma ladra de arte (Gal Gadot) e um ladrão de obras-primas 
@@ -35,6 +35,6 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guardiões da Galáxia</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/ficção/guardião.webp" alt="Guardiões da Galáxia - Filme" />
+        <img src="{{ url_for('static', filename='img/ficção/guardião.webp') }}" alt="Guardiões da Galáxia - Filme" />
       <p>
         "Guardiões da Galáxia" (2014) é um filme de ficção científica e ação do Universo Cinematográfico da Marvel,
         dirigido por James Gunn. A história segue Peter Quill, um aventureiro espacial que se une a um grupo improvável —
@@ -37,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-from flask import Blueprint,render_template,redirect,url_for,request
-import os
+from flask import Blueprint, render_template, request
 
-login = Blueprint('Login',__name__)
+login = Blueprint('login', __name__)
 
-@login.route('/login',methods=['GET', 'POST'])
-def login():
+
+@login.route('/login', methods=['GET', 'POST'])
+def login_page():
     if request.method == 'POST':
         pass
     return render_template('login.html')

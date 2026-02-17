@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Por Água Abaixo</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/por agua abaixo.jpg" alt="Por Água Abaixo - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/por agua abaixo.jpg') }}" alt="Por Água Abaixo - Filme" />
         <p>
             "Por Água Abaixo" (2006), dirigido por David Bowers e Sam Fell, é uma animação que mistura técnicas de computação gráfica e stop-motion.
             A história acompanha Roddy, um rato mimado que vive em um apartamento de luxo em Londres,
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

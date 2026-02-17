@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Virgem de 40 Anos</title>
-    <link rel="stylesheet" href="/CSS/generosP.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
 </head>
 <body>
     <header>
         <h1>O Virgem de 40 Anos</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -18,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/comedia/O virgem aos 40.webp" alt="O Virgem de 40 Anos - Filme">
+        <img src="{{ url_for('static', filename='img/comedia/O virgem aos 40.webp') }}" alt="O Virgem de 40 Anos - Filme">
         <p>
             O Virgem de 40 Anos (2005) é uma comédia dirigida por Judd Apatow e estrelada por Steve Carell, que interpreta Andy,
             um homem gentil, tímido e colecionador de bonecos que, aos 40 anos, ainda é virgem.
@@ -37,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Castelo Animado</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/castelo animado.jpg" alt="O Castelo Animado - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/castelo animado.jpg') }}" alt="O Castelo Animado - Filme" />
         <p>
             "O Castelo Animado" (2004), dirigido por Hayao Miyazaki, é um filme de animação japonês baseado no romance de Diana Wynne Jones.
             A história acompanha Sophie, uma jovem transformada em uma senhora idosa por uma bruxa, que busca ajuda no mágico e enigmático Castelo Animado,
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

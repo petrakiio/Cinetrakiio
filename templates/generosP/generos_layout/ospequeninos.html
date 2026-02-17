@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Mundo dos Pequeninos</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
         <h1>O Mundo dos Pequeninos</h1>
-        <form action="/index.html" method="get">
+        <form action="{{ url_for('home.index') }}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/os pequeninos.webp" alt="O Mundo dos Pequeninos - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/os pequeninos.webp') }}" alt="O Mundo dos Pequeninos - Filme" />
         <p>
             "O Mundo dos Pequeninos" (2010), dirigido por Hiromasa Yonebayashi, é uma animação do Studio Ghibli baseada no livro "The Borrowers" de Mary Norton.
             A história acompanha Arrietty, uma pequena garota que vive escondida em uma casa humana e enfrenta desafios para proteger sua família.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

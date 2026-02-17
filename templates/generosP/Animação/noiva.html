@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>A Noiva Cadáver</title>
-    <link rel="stylesheet" href="/CSS/generosP.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="/Imagens/animação/a noiva cadaver.jpg" alt="A Noiva Cadáver - Filme" />
+        <img src="{{ url_for('static', filename='img/animação/a noiva cadaver.jpg') }}" alt="A Noiva Cadáver - Filme" />
         <p>
             "A Noiva Cadáver" (2005), dirigido por Tim Burton e Mike Johnson, é um filme de animação stop-motion que mistura romance, fantasia e humor negro.
             A história acompanha Victor, um jovem que acidentalmente se casa com uma noiva cadáver enquanto pratica seus votos de casamento na floresta.
@@ -33,6 +33,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="/javascript/theme-global.js"></script>
+    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
 </body>
 </html>

@@ -17,3 +17,8 @@ def sobre():
 @home.route('/novidades')
 def novidades():
     return render_template('novidades.html')
+
+
+@home.route('/aviso')
+def aviso():
+    return render_template('aviso.html')
