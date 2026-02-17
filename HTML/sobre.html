@@ -28,22 +28,35 @@
         <img src="/Imagens/terror/invocação do mal.png" class="slide">
         <img src="/Imagens/ficção/o show de trumam.webp" class="slide">
     </div>
-    <form>
-      <div class="div">
-          <p>faça suas perguntas sobre o site ou feedbeaks</p>
-        <input type="text" placeholder="Perguntar" class="question" id="inputPergunta">
-        <input type="button" value="Enviar" class="question" onclick="document.getElementById('inputPergunta').value = ''; alert('Seu comentário foi recebido');">
-        <input type="button" value="👍" class="feed" onclick="alert('Obrigado,pelo feedbeak positivo, esperamos melhorar e te agradar mais ainda,caro usuário')" >
-        <input type="button" value="👎" class="feed" onclick="alert('Ficamos tristes por não satisfaze-lo nos de uma ideia do que podemos melhorar meu caro usuário?')" >
+    <section class="feedback-box div">
+      <h2>Avalie o CineTrakio</h2>
+      <p>Deixe uma notinha e seu feedback para melhorar o site.</p>
+
+      <div class="rating-stars" id="ratingStars" aria-label="Nota de 1 a 5">
+        <button type="button" class="star" data-rating="1" aria-label="1 estrela">☆</button>
+        <button type="button" class="star" data-rating="2" aria-label="2 estrelas">☆</button>
+        <button type="button" class="star" data-rating="3" aria-label="3 estrelas">☆</button>
+        <button type="button" class="star" data-rating="4" aria-label="4 estrelas">☆</button>
+        <button type="button" class="star" data-rating="5" aria-label="5 estrelas">☆</button>
       </div>
-    </form><br>
-    <div class="div">
-        <p>Opniões de usuario</p>
-    </div><br>
-    <div class="div">
-        <p id="dev">Em Desenvolvimemto</p>
-    </div>
+
+      <form id="feedbackForm" class="feedback-form">
+        <input type="text" id="feedbackNome" class="question" placeholder="Seu nome (opcional)" maxlength="35">
+        <textarea id="feedbackTexto" class="question feedback-textarea" placeholder="Escreva seu comentário..." maxlength="280" required></textarea>
+        <button type="submit" class="feed submit-feedback">Enviar feedback</button>
+      </form>
+
+      <div class="feedback-resumo">
+        <p>Média: <strong id="mediaNota">0.0</strong> / 5</p>
+        <p>Total de avaliações: <strong id="totalAvaliacoes">0</strong></p>
+      </div>
+
+      <h3>Opiniões dos usuários</h3>
+      <ul id="listaFeedback" class="feedback-list"></ul>
+      <p id="dev">Nenhum feedback enviado ainda.</p>
+    </section>
     <script src="/javascript/return.js"></script>
     <script src="/javascript/banner.js"></script>
+    <script src="/javascript/feedback.js"></script>
 </body>
 </html>

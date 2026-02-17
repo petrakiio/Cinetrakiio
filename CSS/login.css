@@ -1,107 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body{
-  color: white;
-  background-color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+:root {
+  --bg: #070b13;
+  --surface: #121a2b;
+  --text: #f5f7ff;
+  --muted: #a7b0ca;
+  --accent: #e50914;
+  --border: #2a3555;
 }
-header{
-  color: white;
-  background-color: black;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-h1{
-  color: red;
-  border: 5px white;
-  font-size: 25px;
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(229, 9, 20, 0.2), transparent 35%),
+    radial-gradient(circle at 84% 8%, rgba(84, 126, 245, 0.18), transparent 32%),
+    var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#h{
-  color: white;
-  position: absolute;
-  font-size: 25px;
-  border: 5px red;
-  right: 35px;
-  top: -10px;
-}
-/*guias*/
+
 .tab {
   display: flex;
-  border-bottom: 1px solid black;
-  background-color: black;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 14, 25, 0.9);
 }
 
 .tab a {
-  padding: 10px 20px;
+  color: var(--text);
   text-decoration: none;
-  color: white;              /* texto branco */
-  border-right: 2px solid red; /* borda vermelha entre as abas */
-  background-color: black;     /* fundo vermelho das abas */
-  border: #990000;
-  border: 5px;
-  transition: 0.3s;
-}
-
-.tab a:last-child {
-  border-right: none;        /* remove borda do último link */
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .tab a:hover {
-  background-color: #cc0000; /* vermelho mais escuro no hover */
-}
-
-.tab a.active {
-  background-color: #990000; /* vermelho mais fechado na aba ativa */
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .content {
-  padding: 20px;
-  color: white;              
-  background-color: black;
-}
-.container {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.75); /* fundo semi-transparente */
-  text-align: center;
-  width: 100%;
-  max-width: 350px;
-  padding: 60px 40px;
-  border-radius: 8px;
-  margin: auto;
-  box-shadow: 0 0 40px rgba(229, 9, 20, 0.6); /* brilho vermelho estilo Netflix */
-  font-family: Arial, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 84px);
+  padding: 1.2rem;
 }
 
-/* Inputs */
+.container {
+  width: min(420px, 94%);
+  background: rgba(16, 24, 39, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.38);
+}
+
+h1 {
+  color: var(--accent);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  letter-spacing: 1px;
+}
+
+#h {
+  color: var(--muted);
+  position: static;
+  font-size: 1.1rem;
+  margin: 0 0 0.85rem;
+}
+
+.container p {
+  margin-top: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
 .container input {
   width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  background: #333;
-  color: #fff;
-  font-size: 16px;
+  padding: 0.8rem 0.9rem;
+  margin: 0.15rem 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #1c2740;
+  color: var(--text);
 }
+
 .container input:focus {
-  outline: 2px solid #e50914; 
+  outline: none;
+  border-color: #4f8bff;
+  box-shadow: 0 0 0 3px rgba(79, 139, 255, 0.22);
 }
-/* Botão */
+
 .container button {
   width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 4px;
-  background: #e50914;
+  margin-top: 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.76rem;
+  background: linear-gradient(135deg, var(--accent), #a60710);
   color: #fff;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
-.container button:hover {
-  background: #f40612;
+
+.cadastro {
+  display: inline-block;
+  margin-top: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
 }
-.cadastro{
-  color: red;
-  font-size: 15px;
+
+.cadastro:hover {
+  color: #fff;
 }

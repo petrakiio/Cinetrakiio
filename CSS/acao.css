@@ -1,109 +1,48 @@
-/* ========== GALERIA DE FILMES (ESTILO NETFLIX) ========== */
-.linha-filmes
- {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 10px 30px;
-    scroll-snap-type: x mandatory;
+@import url('./genres-base.css');
+
+:root {
+  --bg: #090b14;
+  --bg-soft: #161d31;
+  --surface: #1a2238;
+  --text: #f5f8ff;
+  --muted: #9faecc;
+  --accent: #ff2b2b;
+  --accent-soft: #b80c0c;
+  --border: #2b3859;
+}
+
+.left,
+.righ {
+  position: absolute;
+  top: 1rem;
+}
+
+.left {
+  left: 1rem;
+}
+
+.righ {
+  right: 1rem;
+}
+
+.bala {
+  position: fixed;
+  left: -50px;
+  font-size: 24px;
+  color: #ffd84d;
+  user-select: none;
+  text-shadow: 0 0 12px rgba(255, 216, 77, 0.7);
+}
+
+@media (max-width: 760px) {
+  .left,
+  .righ {
+    position: static;
   }
-  
-  .linha-filmes::-webkit-scrollbar
-   {
-    height: 8px;
+
+  header {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
   }
-  
-  .linha-filmes::-webkit-scrollbar-thumb
-   {
-    background-color: #444;
-    border-radius: 4px;
-  }
-  
-  .filme
-   {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-  }
-  
-  .filme img 
-  {
-    width: 250px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-  }
-  
-  .filme img:hover 
-  {
-    transform: scale(1.05);
-  }
-  /*Styles*/
-  body
-  {
-    color: white;
-    background-color: black;
-  }
-  .header
-  {
-    color: white;
-    background-color: black;
-  }
-  #h1
-  {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    color: red;
-    text-align: center;
-  }
-  
-  #pesquisa {
-    background-color: #444;
-    color: white;
-    width: 160px;
-    height: 40px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #pesquisa:hover {
-    background-color: black;
-    border: 2px solid #444;
-  }
-  
-  .button
-  {
-    color: white;
-    background-color: red;
-    width: 80px;
-    height: 40px;
-    border-radius: 15px;
-    border: #444;
-  }
-  .centralizado 
-  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .left
-  {
-    left: 20px;
-    position: absolute;
-    top: 20px;
-  }
-  .righ
-  {
-    right: 20px;
-    position: absolute;
-    top: 20px;
-  }
-  .bala {
-    position: fixed;
-    left: -50px; /* começa fora da tela à esquerda */
-    font-size: 24px;
-    color: yellow;
-    user-select: none;
-  }
+}

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  --bg: #090d18;
+  --bg-soft: #151e33;
+  --surface: #1a2338;
+  --text: #f4f6ff;
+  --muted: #a9b3cd;
+  --accent: #e50914;
+  --accent-soft: #b40610;
+  --border: #293556;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Bebas Neue', sans-serif;
+  background:
+    radial-gradient(circle at 10% 12%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 38%),
+    radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--accent-soft) 20%, transparent), transparent 35%),
+    var(--bg);
+  letter-spacing: 0.3px;
+}
+
+header {
+  position: relative;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-soft) 95%, black), var(--bg-soft));
+  border-bottom: 1px solid var(--border);
+}
+
+h1,
+#h1,
+#text {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 1.4px;
+}
+
+form {
+  margin: 0;
+}
+
+.centralizado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0 0.4rem;
+}
+
+#pesquisa,
+.pesquisa {
+  width: min(520px, 92%);
+  min-height: 44px;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 84%, black);
+  color: var(--text);
+  font-size: 1rem;
+  text-align: left;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#pesquisa::placeholder,
+.pesquisa::placeholder {
+  color: var(--muted);
+}
+
+#pesquisa:focus,
+.pesquisa:focus {
+  border-color: color-mix(in srgb, var(--accent) 48%, white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+.button,
+#toggleButton,
+#toggle {
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, black);
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+#toggleButton:hover,
+#toggle:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.linha-filmes {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0.9rem 1rem 1.7rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1rem;
+}
+
+.linha-filmes::-webkit-scrollbar {
+  height: 8px;
+}
+
+.linha-filmes::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--accent) 35%, #2f3f66);
+  border-radius: 999px;
+}
+
+.filme {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.filme img {
+  width: clamp(150px, 24vw, 250px);
+  height: clamp(220px, 35vw, 350px);
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.filme img:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.42);
+}
+
+@media (max-width: 760px) {
+  header {
+    min-height: 120px;
+    padding-top: 3.5rem;
+  }
+
+  #toggleButton,
+  #toggle {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .button {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+
+  #pesquisa,
+  .pesquisa {
+    font-size: 0.95rem;
+  }
+}

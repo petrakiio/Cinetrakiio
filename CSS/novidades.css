@@ -1,148 +1,171 @@
-/*guias*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  --bg: #080b13;
+  --surface: #121a2a;
+  --surface-2: #171f31;
+  --text: #f4f7ff;
+  --muted: #a6b0c9;
+  --accent: #e50914;
+  --border: #2a3657;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 5%, rgba(229, 9, 20, 0.2), transparent 35%),
+    radial-gradient(circle at 86% 3%, rgba(90, 132, 255, 0.22), transparent 35%),
+    var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .tab {
-    display: flex;
-    border-bottom: 1px solid black;
-    background-color: black;
-  }
-  
-  .tab a {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;              /* texto branco */
-    border-right: 2px solid red; /* borda vermelha entre as abas */
-    background-color: black;     /* fundo vermelho das abas */
-    border: #990000;
-    border: 5px;
-    transition: 0.3s;
-  }
-  
-  .tab a:last-child {
-    border-right: none;        /* remove borda do último link */
-  }
-  
-  .tab a:hover {
-    background-color: #cc0000; /* vermelho mais escuro no hover */
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 16, 27, 0.9);
+}
+
+.tab a {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.tab a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.h1 {
+  text-align: center;
+  color: var(--accent);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 1.4px;
+  margin: 0.8rem 0 0.35rem;
+}
+
+.categoria {
+  margin: 1.3rem 0 0.4rem 1rem;
+  color: var(--accent);
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.8px;
+}
+
 .sliderAutoTrakio .slide {
-    display: none;
-  }
-  
-  .sliderAutoTrakio .slide.ativo {
-    display: block;
-  }
-  #mediaImg {
-    max-width: 100%;
-    display: block;   /* Começa visível */
-    width: 250px;
-    height: 350px;
-    border-radius: 16px;
-  }
-  
-  /* Quando quiser esconder a imagem */
-  #mediaImg.oculto {
-    display: none;
-  }
-  
-  /* Estilo básico para o vídeo */
-  #mediaVideo {
-    max-width: 100%;    /* Largura máxima responsiva */
-    display: none;      /* Começa escondido */
-  }
-  
-  /* Quando o vídeo estiver visível, você pode controlar a exibição via JS */
-  #mediaVideo.ativo {
-    display: block;
-  }
-  
-  .visivel {
-    display: block;
-  }
-  
-  .oculto {
-    display: none;
-  }
-  
-  /* ========== GALERIA DE FILMES (ESTILO NETFLIX) ========== */
-  .linha-filmes {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 10px 30px;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .linha-filmes::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .linha-filmes::-webkit-scrollbar-thumb {
-    background-color: #444;
-    border-radius: 4px;
-  }
-  
+  display: none;
+}
+
+.sliderAutoTrakio .slide.ativo {
+  display: block;
+}
+
+.linha-filmes {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.8rem 1rem 1.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.linha-filmes::-webkit-scrollbar {
+  height: 8px;
+}
+
+.linha-filmes::-webkit-scrollbar-thumb {
+  background-color: #31426b;
+  border-radius: 999px;
+}
+
+.filme {
+  flex: 0 0 auto;
+  width: clamp(180px, 27vw, 270px);
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.mediaContainer {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#mediaImg,
+.mediaImg {
+  width: 100%;
+  height: clamp(230px, 32vw, 340px);
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#mediaVideo,
+.mediaVideo {
+  width: 100%;
+  height: clamp(230px, 32vw, 340px);
+  border: 0;
+  border-radius: 12px;
+}
+
+.visivel {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+#button,
+.toggleMedia,
+.voltarMedia,
+#voltar {
+  margin-top: 0.55rem;
+  border: 1px solid #9f0810;
+  background: linear-gradient(135deg, var(--accent), #9f0810);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#button:hover,
+.toggleMedia:hover,
+.voltarMedia:hover,
+#voltar:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 760px) {
   .filme {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+    width: 84vw;
+    max-width: 340px;
   }
-  
-  .filme img {
-    width: 250px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+
+  .categoria {
+    margin-left: 0.8rem;
   }
-  
-  .filme img:hover {
-    transform: scale(1.05);
-  }
-  /*Styles visuais*/
-  body{
-    color: white;
-    background-color: black;
-    padding: 0;
-    margin: 0;
-  }
-  header{
-    top: 0;
-  }
-  
-  .h1 {
-    color: red;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow:
-      -1px -1px 0 white,
-      1px -1px 0 white,
-      -1px 1px 0 white,
-      1px 1px 0 white;
-  }
-  .posição{
-    right: 20px;
-    top: 20px;
-    position: absolute;
-  }
-  #voltar{
-    width: 50px;
-    height: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    background-color: red;
-    border: 5px solid red;
-    border-radius: 1px;
-  }
-  .categoria{
-    color: red;
-  }
-  #button {
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 15px;
-    margin: 5px; /* margem de 5px em todos os lados */
-    background-color: red;
-    padding: 5px; /* espaçamento interno de 5px */
-    border: 1px solid red; /* borda vermelha fina */
-    cursor: pointer; /* deixa o cursor de mãozinha ao passar */
-    border-radius: 4px; /* opcional, para bordas arredondadas */
-  }
-  
+}
