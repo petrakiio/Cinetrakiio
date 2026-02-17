@@ -94,7 +94,7 @@
     <script src="{{ url_for('static', filename='script/banner.js') }}"></script>
     <script src="{{ url_for('static', filename='script/anim.js') }}"></script>
     <script src="{{ url_for('static', filename='script/modo.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/search_index.js') }}"></script>
 </body>
 
 <!-- Rodapé -->
@@ -107,24 +107,13 @@
             <td><a href="{{ url_for('home.aviso') }}">Suporte</a></td>
             <td><a href="{{ url_for('home.aviso') }}">Políticas do Usuário</a></td>
         </tr>
-        <tr>
+        <tr id="social-links-row">
             <td>
                 <p>Siga nós para novidades</p><br>
                 <p>👉</p>
             </td>
-            <td>
-                <a href="https://www.instagram.com/pe.zrd/"><img src="{{ url_for('static', filename='img/redes sociais/instagran.png') }}" alt="instagram" id="imageinsta"></a>
-            </td>
-            <td>
-                <a href="https://www.tiktok.com/@petrakiio"><img src="{{ url_for('static', filename='img/redes sociais/tik tok.webp') }}" alt="tiktok" id="imageinsta"></a>
-            </td>
-            <td>
-                <a href="https://discord.com/discovery/quests#1333839522189938740"><img src="{{ url_for('static', filename='img/redes sociais/discord.png') }}" alt="discord" id="imageinsta"></a>
-            </td>
-            <td>
-                <a href="https://www.linkedin.com/in/petrakiio/"><img src="{{ url_for('static', filename='img/redes sociais/link.svg') }}" alt="xbox" id="imageinsta"></a>
-            </td>
         </tr>
     </table>
 </footer>
+<script src="{{ url_for('static', filename='script/social_links.js') }}"></script>
 </html>

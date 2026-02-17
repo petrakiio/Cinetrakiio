@@ -1,9 +1,10 @@
-from flask import Blueprint,redirect,url_for,render_template,request
+from flask import Blueprint, render_template, request
 
-cadastro = Blueprint('Cadastro',__name__)
+cadastro = Blueprint('cadastro', __name__)
 
-@cadastro.route('/cadastro',methods=['POST', 'GET'])
-def cad():
+
+@cadastro.route('/cadastro', methods=['GET', 'POST'])
+def cadastro_page():
     if request.method == 'POST':
         pass
     return render_template('cadastro.html')

@@ -100,10 +100,25 @@ const filmes = {
     ]
 }
 
+// Normaliza os caminhos para ambiente Flask sem alterar manualmente cada item.
+for (const genero in filmes) {
+    filmes[genero] = filmes[genero].map((filme) => ({
+        ...filme,
+        img: filme.img.replace('../Imagens/', '/static/img/'),
+        link: filme.link.replace('./', '/')
+    }));
+}
 
 const campoBusca = document.getElementById('pesquisa');
 const containerResultados = document.getElementById('resultados-busca');
 
+function normalize(value) {
+    return (value || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
 
 const elementosParaEsconder = [
     document.querySelector('.sliderAutoTrakio'),
@@ -114,8 +129,11 @@ const elementosParaEsconder = [
     document.querySelector('footer')
 ];
 
+if (!campoBusca || !containerResultados) {
+    console.warn('Busca não inicializada: #pesquisa ou #resultados-busca não encontrado.');
+} else {
 campoBusca.addEventListener('input', () => {
-    const termo = campoBusca.value.toLowerCase().trim();
+    const termo = normalize(campoBusca.value);
 
     if (termo === "") {
         elementosParaEsconder.forEach(el => { if(el) el.style.display = 'block'; });
@@ -129,12 +147,13 @@ campoBusca.addEventListener('input', () => {
 
     let achados = [];
     for (let genero in filmes) {
-        const filtro = filmes[genero].filter(f => f.nome.toLowerCase().includes(termo));
+        const filtro = filmes[genero].filter((f) => normalize(f.nome).includes(termo));
         achados = [...achados, ...filtro];
     }
 
     renderizarBusca(achados);
 });
+}
 
 function renderizarBusca(lista) {
     if (lista.length === 0) {
@@ -146,8 +165,8 @@ function renderizarBusca(lista) {
     }
 
     const cards = lista.map(f => {
-        const imgPath = f.img.replace('../Imagens/', '/static/img/');
-        const linkPath = f.link.replace('./', '/');
+        const imgPath = f.img;
+        const linkPath = f.link;
 
         return `
             <div style="width: 180px; margin: 20px; text-align: center; transition: transform 0.3s;">

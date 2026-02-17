@@ -150,4 +150,26 @@
   }
 
   syncButtonText();
+
+  // Em páginas de filme: se o botão "Voltar" for enviado via form,
+  // prioriza voltar para a página anterior (ex.: resultado da busca).
+  document.addEventListener('submit', (event) => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const submitBtn = form.querySelector('button[type="submit"].button');
+    if (!submitBtn) return;
+
+    const label = submitBtn.textContent?.trim().toLowerCase();
+    if (label !== 'voltar') return;
+
+    const hasHistory = window.history.length > 1;
+    const hasSameOriginReferrer =
+      !!document.referrer && new URL(document.referrer).origin === window.location.origin;
+
+    if (hasHistory && hasSameOriginReferrer) {
+      event.preventDefault();
+      window.history.back();
+    }
+  });
 })();
