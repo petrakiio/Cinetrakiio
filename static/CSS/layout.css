@@ -42,6 +42,12 @@ header {
   background: transparent;
 }
 
+.topbar-shell {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
 h1 {
   color: var(--text);
   font-size: clamp(2rem, 5vw, 3.1rem);
@@ -68,11 +74,25 @@ p {
 }
 
 .tab a {
+  position: relative;
   padding: 0.55rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
   transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.tab a::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 5px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  background: color-mix(in srgb, var(--accent) 90%, white);
 }
 
 .tab a:hover {
@@ -81,9 +101,63 @@ p {
   transform: translateY(-2px);
 }
 
+.tab a:hover::after {
+  transform: scaleX(1);
+}
+
 .tab a.active {
   background: var(--accent-strong);
   border-color: var(--accent-strong);
+}
+
+.menu-toggle {
+  display: none;
+  position: absolute;
+  right: 0.9rem;
+  top: 0.72rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 92%, black);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 19px;
+  height: 2px;
+  border-radius: 8px;
+  background: var(--text);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-close {
+  display: none;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 90%, black);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.58rem 0.8rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 #modo {
@@ -267,12 +341,28 @@ form {
 }
 
 footer {
+  position: relative;
   margin: 1.2rem auto 1.1rem;
   width: min(1100px, 94%);
   background: rgba(14, 19, 32, 0.9);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1rem;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.08) 48%, transparent 100%);
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+  pointer-events: none;
+}
+
+footer:hover::before {
+  transform: translateX(120%);
 }
 
 footer table {
@@ -284,6 +374,12 @@ footer table {
 footer td {
   padding: 0.45rem 0.4rem;
   color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+footer td:hover {
+  transform: translateY(-2px);
+  color: var(--text);
 }
 
 footer a {
@@ -435,19 +531,39 @@ footer a:hover {
 }
 
 @media (max-width: 760px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .tab {
-    justify-content: center;
+    display: none;
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 0.55rem;
-    padding: 0.8rem;
+    padding: 3.2rem 0.8rem 0.8rem;
+    flex-direction: column;
+  }
+
+  .tab.open {
+    display: flex;
+  }
+
+  .menu-close {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.2rem;
   }
 
   .tab a {
-    padding: 0.5rem 0.82rem;
+    padding: 0.7rem 0.82rem;
     font-size: 0.9rem;
+    text-align: center;
   }
 
   #modo {
-    padding: 0.55rem 1rem;
+    width: 100%;
+    margin-top: 0.2rem;
+    padding: 0.7rem 1rem;
     font-size: 0.76rem;
   }
 

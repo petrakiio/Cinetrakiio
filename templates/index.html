@@ -14,8 +14,14 @@
 </head>
 <body>
     <!-- Menu de navegação -->
-    <header>
-        <div class="tab">
+    <header class="topbar-shell">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="tab" id="mainMenu">
+            <button class="menu-close" id="menuClose" type="button" aria-label="Fechar menu">Fechar ✕</button>
             <a href="{{ url_for('login.login_page') }}">Login</a>
             <a href="{{ url_for('home.sobre') }}">Sobre</a>
             <a href="{{ url_for('home.novidades') }}">Novidades</a>
@@ -95,6 +101,7 @@
     <script src="{{ url_for('static', filename='script/anim.js') }}"></script>
     <script src="{{ url_for('static', filename='script/modo.js') }}"></script>
     <script src="{{ url_for('static', filename='script/search_index.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/topbar.js') }}"></script>
 </body>
 
 <!-- Rodapé -->
