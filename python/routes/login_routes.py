@@ -7,4 +7,4 @@ login = Blueprint('login', __name__)
 def login_page():
     if request.method == 'POST':
         pass
-    return render_template('login.html')
+    return render_template('home/login.html')

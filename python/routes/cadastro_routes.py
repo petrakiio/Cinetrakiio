@@ -7,4 +7,4 @@ cadastro = Blueprint('cadastro', __name__)
 def cadastro_page():
     if request.method == 'POST':
         pass
-    return render_template('cadastro.html')
+    return render_template('home/cadastro.html')

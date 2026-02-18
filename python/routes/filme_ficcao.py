@@ -3,18 +3,18 @@ from flask import Blueprint, render_template
 filme_ficcao = Blueprint('filme_ficcao', __name__)
 
 FILMES_FICCAO = {
-    'alien': 'generosP/Ficção/alien.html',
-    'bladerunner': 'generosP/Ficção/bladerunner.html',
-    'guardioes': 'generosP/Ficção/guardioes.html',
-    'harry': 'generosP/Ficção/harry.html',
-    'interstelar': 'generosP/Ficção/interstelar.html',
-    'jurasicpark': 'generosP/Ficção/jurasicpark.html',
-    'matrix': 'generosP/Ficção/matrix.html',
-    'piratas': 'generosP/Ficção/piratas.html',
-    'show': 'generosP/Ficção/show.html',
-    'star': 'generosP/Ficção/star.html',
-    'umdia': 'generosP/Ficção/umdia.html',
-    'uncharted': 'generosP/Ficção/uncharted.html',
+    'alien': 'generos_filmes/Ficção/alien.html',
+    'bladerunner': 'generos_filmes/Ficção/bladerunner.html',
+    'guardioes': 'generos_filmes/Ficção/guardioes.html',
+    'harry': 'generos_filmes/Ficção/harry.html',
+    'interstelar': 'generos_filmes/Ficção/interstelar.html',
+    'jurasicpark': 'generos_filmes/Ficção/jurasicpark.html',
+    'matrix': 'generos_filmes/Ficção/matrix.html',
+    'piratas': 'generos_filmes/Ficção/piratas.html',
+    'show': 'generos_filmes/Ficção/show.html',
+    'star': 'generos_filmes/Ficção/star.html',
+    'umdia': 'generos_filmes/Ficção/umdia.html',
+    'uncharted': 'generos_filmes/Ficção/uncharted.html',
 }
 
 
@@ -22,5 +22,5 @@ FILMES_FICCAO = {
 def filme(slug: str):
     template = FILMES_FICCAO.get(slug)
     if not template:
-        return render_template('aviso.html'), 404
+        return render_template('home/aviso.html'), 404
     return render_template(template)

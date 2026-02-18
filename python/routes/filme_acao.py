@@ -3,18 +3,18 @@ from flask import Blueprint, render_template
 filme_acao = Blueprint('filme_acao', __name__)
 
 FILMES_ACAO = {
-    'alerta-vermelho': 'generosP/Ação/alertavermelho.html',
-    'ate-o-ultimo-homem': 'generosP/Ação/ultimohomen.html',
-    'bad-boys': 'generosP/Ação/badboys.html',
-    'clube-da-luta': 'generosP/Ação/clube_luta.html',
-    'duro-de-matar': 'generosP/Ação/durodematar.html',
-    'exterminador': 'generosP/Ação/exterminador.html',
-    'gladiador': 'generosP/Ação/gladiador.html',
-    'john-wick': 'generosP/Ação/johnwick.html',
-    'madmax': 'generosP/Ação/madmax.html',
-    'mercenarios': 'generosP/Ação/mercenarios.html',
-    'missao-impossivel': 'generosP/Ação/missaoimpossivel.html',
-    'protetor': 'generosP/Ação/protetor.html',
+    'alerta-vermelho': 'generos_filmes/Ação/alertavermelho.html',
+    'ate-o-ultimo-homem': 'generos_filmes/Ação/ultimohomen.html',
+    'bad-boys': 'generos_filmes/Ação/badboys.html',
+    'clube-da-luta': 'generos_filmes/Ação/clube_luta.html',
+    'duro-de-matar': 'generos_filmes/Ação/durodematar.html',
+    'exterminador': 'generos_filmes/Ação/exterminador.html',
+    'gladiador': 'generos_filmes/Ação/gladiador.html',
+    'john-wick': 'generos_filmes/Ação/johnwick.html',
+    'madmax': 'generos_filmes/Ação/madmax.html',
+    'mercenarios': 'generos_filmes/Ação/mercenarios.html',
+    'missao-impossivel': 'generos_filmes/Ação/missaoimpossivel.html',
+    'protetor': 'generos_filmes/Ação/protetor.html',
 }
 
 
@@ -22,5 +22,5 @@ FILMES_ACAO = {
 def filme(slug: str):
     template = FILMES_ACAO.get(slug)
     if not template:
-        return render_template('aviso.html'), 404
+        return render_template('home/aviso.html'), 404
     return render_template(template)

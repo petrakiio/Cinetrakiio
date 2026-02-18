@@ -3,18 +3,18 @@ from flask import Blueprint, render_template
 filme_brasileiro = Blueprint('filme_brasileiro', __name__)
 
 FILMES_BRASILEIROS = {
-    'bacurau': 'generosP/Braseleiro/bacurau.html',
-    'areia': 'generosP/Braseleiro/areia.html',
-    'carandiru': 'generosP/Braseleiro/carandiru.html',
-    'central': 'generosP/Braseleiro/central.html',
-    'cidade-de-deus': 'generosP/Braseleiro/cidadeDeus.html',
-    'estomago': 'generosP/Braseleiro/estomago.html',
-    'maniaco': 'generosP/Braseleiro/maniacoP.html',
-    'mae-peca': 'generosP/Braseleiro/maepeça.html',
-    'palhaco': 'generosP/Braseleiro/palhaço.html',
-    'reflexoes': 'generosP/Braseleiro/reflexoesL.html',
-    'se-fosse-voce': 'generosP/Braseleiro/sefossevc.html',
-    'sonhos-roubados': 'generosP/Braseleiro/sonhoroubados.html',
+    'bacurau': 'generos_filmes/Braseleiro/bacurau.html',
+    'areia': 'generos_filmes/Braseleiro/areia.html',
+    'carandiru': 'generos_filmes/Braseleiro/carandiru.html',
+    'central': 'generos_filmes/Braseleiro/central.html',
+    'cidade-de-deus': 'generos_filmes/Braseleiro/cidadeDeus.html',
+    'estomago': 'generos_filmes/Braseleiro/estomago.html',
+    'maniaco': 'generos_filmes/Braseleiro/maniacoP.html',
+    'mae-peca': 'generos_filmes/Braseleiro/maepeça.html',
+    'palhaco': 'generos_filmes/Braseleiro/palhaço.html',
+    'reflexoes': 'generos_filmes/Braseleiro/reflexoesL.html',
+    'se-fosse-voce': 'generos_filmes/Braseleiro/sefossevc.html',
+    'sonhos-roubados': 'generos_filmes/Braseleiro/sonhoroubados.html',
 }
 
 
@@ -22,5 +22,5 @@ FILMES_BRASILEIROS = {
 def filme(slug: str):
     template = FILMES_BRASILEIROS.get(slug)
     if not template:
-        return render_template('aviso.html'), 404
+        return render_template('home/aviso.html'), 404
     return render_template(template)

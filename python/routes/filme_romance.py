@@ -3,17 +3,17 @@ from flask import Blueprint, render_template
 filme_romance = Blueprint('filme_romance', __name__)
 
 FILMES_ROMANCE = {
-    'antesdeamanhecer': 'generosP/Romance/antesdeamanhecer.html',
-    'azul': 'generosP/Romance/Azuleacormaisquente.html',
-    'comoperderumhomem': 'generosP/Romance/comoperderumhomem.html',
-    'diariopaixao': 'generosP/Romance/diariopaixão.html',
-    'docenovembro': 'generosP/Romance/docenovembro.html',
-    'iloveyou': 'generosP/Romance/iloveyou.html',
-    'lembrancas': 'generosP/Romance/lembranças.html',
-    'naturezaselvagem': 'generosP/Romance/naturezaselvagem.html',
-    'orgulhopreconceito': 'generosP/Romance/orgulho&preconceito.html',
-    'pacienteingles': 'generosP/Romance/pacienteingles.html',
-    'retrato': 'generosP/Romance/retrato.html',
+    'antesdeamanhecer': 'generos_filmes/Romance/antesdeamanhecer.html',
+    'azul': 'generos_filmes/Romance/Azuleacormaisquente.html',
+    'comoperderumhomem': 'generos_filmes/Romance/comoperderumhomem.html',
+    'diariopaixao': 'generos_filmes/Romance/diariopaixão.html',
+    'docenovembro': 'generos_filmes/Romance/docenovembro.html',
+    'iloveyou': 'generos_filmes/Romance/iloveyou.html',
+    'lembrancas': 'generos_filmes/Romance/lembranças.html',
+    'naturezaselvagem': 'generos_filmes/Romance/naturezaselvagem.html',
+    'orgulhopreconceito': 'generos_filmes/Romance/orgulho&preconceito.html',
+    'pacienteingles': 'generos_filmes/Romance/pacienteingles.html',
+    'retrato': 'generos_filmes/Romance/retrato.html',
 }
 
 
@@ -21,5 +21,5 @@ FILMES_ROMANCE = {
 def filme(slug: str):
     template = FILMES_ROMANCE.get(slug)
     if not template:
-        return render_template('aviso.html'), 404
+        return render_template('home/aviso.html'), 404
     return render_template(template)
