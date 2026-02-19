@@ -45,6 +45,18 @@ Precisa de uma **Landing Page** de alta conversão ou um **site personalizado** 
 
 ---
 
+### ⚙️ Rodando Local (venv)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 app.py
+```
+
+Abra no navegador: `http://localhost:5000`
+
+---
+
 <div align="center">
   <sub>Projeto de estudo e portfólio por <a href="https://github.com/petrakiio">Pedro</a></sub>
 </div>
