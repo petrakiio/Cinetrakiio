@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint
+
+from python.controllers.page_controller import render_home_page
 
 home = Blueprint('home', __name__)
 
@@ -6,19 +8,19 @@ home = Blueprint('home', __name__)
 @home.route('/')
 @home.route('/index')
 def index():
-    return render_template('home/index.html')
+    return render_home_page('index')
 
 
 @home.route('/sobre')
 def sobre():
-    return render_template('home/sobre.html')
+    return render_home_page('sobre')
 
 
 @home.route('/novidades')
 def novidades():
-    return render_template('home/novidades.html')
+    return render_home_page('novidades')
 
 
 @home.route('/aviso')
 def aviso():
-    return render_template('home/aviso.html')
+    return render_home_page('aviso')

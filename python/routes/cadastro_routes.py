@@ -1,10 +1,10 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint
+
+from python.controllers.page_controller import render_auth_page
 
 cadastro = Blueprint('cadastro', __name__)
 
 
 @cadastro.route('/cadastro', methods=['GET', 'POST'])
 def cadastro_page():
-    if request.method == 'POST':
-        pass
-    return render_template('home/cadastro.html')
+    return render_auth_page('cadastro')
