@@ -6,12 +6,13 @@
     <title>CineTrakio</title>
 
     <!-- Estilos -->
-     <link rel="shortcut icon" href="{{ url_for('static', filename='img/Logos/Logo.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/banner.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/menu.css') }}">
-
+     {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/Logos/Logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'CSS/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css' %}">
 </head>
+
 <body>
     <!-- Menu de navegação -->
     <header class="topbar-shell">
@@ -20,107 +21,49 @@
             <span></span>
             <span></span>
         </button>
+
         <div class="tab" id="mainMenu">
-            <button class="menu-close" id="menuClose" type="button" aria-label="Fechar menu">Fechar ✕</button>
-            <a href="{{ url_for('login.login_page') }}">Login</a>
-            <a href="{{ url_for('home.sobre') }}">Sobre</a>
-            <a href="{{ url_for('home.novidades') }}">Novidades</a>
+            <button class="menu-close" id="menuClose" type="button">Fechar ✕</button>
+
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'sobre' %}">Sobre</a>
+            <a href="{% url 'novidades' %}">Novidades</a>
+
             <button id="modo">Modo Claro</button>
         </div>
     </header>
-    <!-- Tela de carregamento -->
-    <div class="loading-overlay" id="loadingScreen">
-        <div class="loading-card">
-            <div class="loading-logo">CineTrakio🍿</div>
-            <div class="loading-spinner"></div>
-            <div class="loading-track">
-                <div class="loading-bar" id="loadingBar"></div>
-            </div>
-            <p class="loading-text">Carregando <span id="loadingPercent">0%</span></p>
-        </div>
-    </div>
-
-    <!-- Título do site -->
-    <header>
-        <h1>CineTrakio🍿</h1>
-    </header>
-
-    <!-- Campo de busca -->
-    <form>
-        <input type="text" id="pesquisa" placeholder="Buscar filmes">
-    </form>
 
     <!-- Banner automático -->
     <div class="sliderAutoTrakio" id="banner">
-        <img src="{{ url_for('static', filename='img/ação/ate o ultimo homem.jpg') }}" class="slide ativo">
-        <img src="{{ url_for('static', filename='img/comedia/gente grande 2.jpg') }}" class="slide">
-        <img src="{{ url_for('static', filename='img/animação/os incriveis.jpg') }}" class="slide">
-        <img src="{{ url_for('static', filename='img/terror/mama.jpg') }}" class="slide">
+        <img src="{% static 'img/ação/ate o ultimo homem.jpg' %}" class="slide ativo">
+        <img src="{% static 'img/comedia/gente grande 2.jpg' %}" class="slide">
+        <img src="{% static 'img/animação/os incriveis.jpg' %}" class="slide">
+        <img src="{% static 'img/terror/mama.jpg' %}" class="slide">
     </div>
 
     <!-- Gêneros -->
-    <div class="gen">
-        <p id="generos">Gêneros</p>
-    </div>
     <div class="generos">
-        <a href="{{ url_for('generos.comedia') }}">Comédia</a>
-        <a href="{{ url_for('generos.acao') }}">Ação</a>
-        <a href="{{ url_for('generos.terror') }}">Terror</a>
-        <a href="{{ url_for('generos.brasileiro') }}">Brasileiro</a>
-        <a href="{{ url_for('generos.romance') }}">Romance</a>
-        <a href="{{ url_for('generos.animacao') }}">Animação</a>
-        <a href="{{ url_for('generos.ficcao') }}">Ficção</a>
-    </div>
-
-    <!-- Galeria-->
-    <h2 class="categoria">Filmes Populares</h2>
-   <div id="resultados-busca" style="width: 100%;"></div>
-    <div class="linha-filmes">
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/durodematar.html"><img src="{{ url_for('static', filename='img/ação/duro de matar.jpg') }}" alt="Duro de Matar"><div class="filme-info"><h3>Duro de Matar</h3><span>Ação</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/maniacoP.html"><img src="{{ url_for('static', filename='img/brasileiro/maniaco do parque.jpg') }}" alt="Maníaco do Parque"><div class="filme-info"><h3>Maníaco do Parque</h3><span>Brasileiro</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/jurasicpark.html"><img src="{{ url_for('static', filename='img/ficção/jurassic park.jpg') }}" alt="Jurassic Park"><div class="filme-info"><h3>Jurassic Park</h3><span>Ficção</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="{{ url_for('static', filename='img/romance/Orgulho e preconceito.webp') }}" alt="Orgulho e Preconceito"><div class="filme-info"><h3>Orgulho e Preconceito</h3><span>Romance</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/clube_luta.html"><img src="{{ url_for('static', filename='img/ação/clube da luta.webp') }}" alt="Clube da Luta"><div class="filme-info"><h3>Clube da Luta</h3><span>Ação</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/guardioes.html"><img src="{{ url_for('static', filename='img/ficção/guardião.webp') }}" alt="Guardiões"><div class="filme-info"><h3>Guardiões</h3><span>Ficção</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/mechamepelonome.html"><img src="{{ url_for('static', filename='img/romance/Me chame pelo seu nome.webp') }}" alt="Me Chame Pelo Seu Nome"><div class="filme-info"><h3>Me Chame Pelo Seu Nome</h3><span>Romance</span></div></a></div>
-    </div>
-
-    <h2 class="categoria">Novidades</h2>
-    <div class="linha-filmes">
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/6ridiculos.html"><img src="{{ url_for('static', filename='img/comedia/Os 6 ridiculos.jpg') }}" alt="Os 6 Ridículos"><div class="filme-info"><h3>Os 6 Ridículos</h3><span>Comédia</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/lembranças.html"><img src="{{ url_for('static', filename='img/romance/Lembranças.webp') }}" alt="Lembranças"><div class="filme-info"><h3>Lembranças</h3><span>Romance</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/corra.html"><img src="{{ url_for('static', filename='img/terror/Corra!.webp') }}" alt="Corra"><div class="filme-info"><h3>Corra</h3><span>Terror</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/ospequeninos.html"><img src="{{ url_for('static', filename='img/animação/os pequeninos.webp') }}" alt="Os Pequeninos"><div class="filme-info"><h3>Os Pequeninos</h3><span>Animação</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/orgulho&preconceito.html"><img src="{{ url_for('static', filename='img/romance/Orgulho e preconceito.webp') }}" alt="Orgulho e Preconceito"><div class="filme-info"><h3>Orgulho e Preconceito</h3><span>Romance</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/virgem40.html"><img src="{{ url_for('static', filename='img/comedia/O virgem aos 40.webp') }}" alt="O Virgem aos 40"><div class="filme-info"><h3>O Virgem aos 40</h3><span>Comédia</span></div></a></div>
-        <div class="filme"><a class="filme-card" href="./HTML/generosP/generos_layout/noiva.html"><img src="{{ url_for('static', filename='img/animação/a noiva cadaver.jpg') }}" alt="A Noiva Cadáver"><div class="filme-info"><h3>A Noiva Cadáver</h3><span>Animação</span></div></a></div>
+        
+        <a href="{% url 'genero_comedia' %}">Comédia</a>
+        <a href="{% url 'genero_acao' %}">Ação</a>
+        <a href="{% url 'genero_terror' %}">Terror</a>
+        <a href="{% url 'genero_brasileiro' %}">Brasileiro</a>
+        <a href="{% url 'genero_romance' %}">Romance</a>
+        <a href="{% url 'genero_animacao' %}">Animação</a>
+        <a href="{% url 'genero_ficcao' %}">Ficção</a>
     </div>
 
     <!-- Scripts -->
-    <script src="{{ url_for('static', filename='script/banner.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/anim.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/modo.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/search_index.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/topbar.js') }}"></script>
+    <script src="{% static 'script/banner.js' %}"></script>
+    <script src="{% static 'script/anim.js' %}"></script>
+    <script src="{% static 'script/modo.js' %}"></script>
+    <script src="{% static 'script/search_index.js' %}"></script>
+    <script src="{% static 'script/topbar.js' %}"></script>
 </body>
 
-<!-- Rodapé -->
 <footer>
-    <table>
-        <tr>
-            <td><a href="{{ url_for('home.aviso') }}">Políticas de Privacidade</a></td>
-            <td><a href="{{ url_for('home.aviso') }}">Proteção de dados</a></td>
-            <td><a href="{{ url_for('home.aviso') }}">Contato</a></td>
-            <td><a href="{{ url_for('home.aviso') }}">Suporte</a></td>
-            <td><a href="{{ url_for('home.aviso') }}">Políticas do Usuário</a></td>
-        </tr>
-        <tr id="social-links-row">
-            <td>
-                <p>Siga nós para novidades</p><br>
-                <p>👉</p>
-            </td>
-        </tr>
-    </table>
+    <a href="{% url 'aviso' %}">Políticas de Privacidade</a>
 </footer>
-<script src="{{ url_for('static', filename='script/social_links.js') }}"></script>
+
+<script src="{% static 'script/social_links.js' %}"></script>
 </html>
