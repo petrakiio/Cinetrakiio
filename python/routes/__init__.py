@@ -1,27 +1,27 @@
-from python.routes.cadastro_routes import cadastro
-from python.routes.filme_acao import filme_acao
-from python.routes.filme_animacao import filme_animacao
-from python.routes.filme_brasileiro import filme_brasileiro
-from python.routes.filme_comedia import filme_comedia
-from python.routes.filme_ficcao import filme_ficcao
-from python.routes.filme_romance import filme_romance
-from python.routes.filme_terror import filme_terror
-from python.routes.generos_routes import generos
-from python.routes.home_routes import home
-from python.routes.legacy_routes import legacy
-from python.routes.login_routes import login
+from python.routes.cadastro_routes import urlpatterns as cadastro_urlpatterns
+from python.routes.filme_acao import urlpatterns as filme_acao_urlpatterns
+from python.routes.filme_animacao import urlpatterns as filme_animacao_urlpatterns
+from python.routes.filme_brasileiro import urlpatterns as filme_brasileiro_urlpatterns
+from python.routes.filme_comedia import urlpatterns as filme_comedia_urlpatterns
+from python.routes.filme_ficcao import urlpatterns as filme_ficcao_urlpatterns
+from python.routes.filme_romance import urlpatterns as filme_romance_urlpatterns
+from python.routes.filme_terror import urlpatterns as filme_terror_urlpatterns
+from python.routes.generos_routes import urlpatterns as generos_urlpatterns
+from python.routes.home_routes import urlpatterns as home_urlpatterns
+from python.routes.legacy_routes import urlpatterns as legacy_urlpatterns
+from python.routes.login_routes import urlpatterns as login_urlpatterns
 
-ALL_BLUEPRINTS = [
-    home,
-    login,
-    cadastro,
-    generos,
-    legacy,
-    filme_acao,
-    filme_comedia,
-    filme_animacao,
-    filme_brasileiro,
-    filme_ficcao,
-    filme_romance,
-    filme_terror,
+urlpatterns = [
+    *home_urlpatterns,
+    *login_urlpatterns,
+    *cadastro_urlpatterns,
+    *generos_urlpatterns,
+    *legacy_urlpatterns,
+    *filme_acao_urlpatterns,
+    *filme_comedia_urlpatterns,
+    *filme_animacao_urlpatterns,
+    *filme_brasileiro_urlpatterns,
+    *filme_ficcao_urlpatterns,
+    *filme_romance_urlpatterns,
+    *filme_terror_urlpatterns,
 ]

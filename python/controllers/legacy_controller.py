@@ -1,5 +1,5 @@
-from flask import render_template
-from jinja2 import TemplateNotFound
+from django.shortcuts import render
+from django.template.exceptions import TemplateDoesNotExist
 
 from python.models.page_model import HOME_TEMPLATES
 
@@ -10,13 +10,13 @@ def resolve_legacy_template(template_name: str) -> str:
     return template_name
 
 
-def render_index_html():
-    return render_template(HOME_TEMPLATES['index'])
+def render_index_html(request):
+    return render(request, HOME_TEMPLATES['index'])
 
 
-def render_html_template(template_name: str):
+def render_html_template(request, template_name: str):
     if '..' in template_name:
-        return render_template(HOME_TEMPLATES['aviso']), 404
+        return render(request, HOME_TEMPLATES['aviso'], status=404)
 
     try:
         resolved = resolve_legacy_template(template_name)
@@ -28,20 +28,20 @@ def render_html_template(template_name: str):
 
         for candidate in candidates:
             try:
-                return render_template(candidate)
-            except TemplateNotFound:
+                return render(request, candidate)
+            except TemplateDoesNotExist:
                 continue
 
-        raise TemplateNotFound(template_name)
-    except TemplateNotFound:
-        return render_template(HOME_TEMPLATES['aviso']), 404
+        raise TemplateDoesNotExist(template_name)
+    except TemplateDoesNotExist:
+        return render(request, HOME_TEMPLATES['aviso'], status=404)
 
 
-def render_generos_template(template_name: str):
+def render_generos_template(request, template_name: str):
     if '..' in template_name:
-        return render_template(HOME_TEMPLATES['aviso']), 404
+        return render(request, HOME_TEMPLATES['aviso'], status=404)
 
     try:
-        return render_template(f'generos_filmes/{template_name}')
-    except TemplateNotFound:
-        return render_template(HOME_TEMPLATES['aviso']), 404
+        return render(request, f'generos_filmes/{template_name}')
+    except TemplateDoesNotExist:
+        return render(request, HOME_TEMPLATES['aviso'], status=404)

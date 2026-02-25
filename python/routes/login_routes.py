@@ -1,10 +1,12 @@
-from flask import Blueprint
+from django.urls import path
 
 from python.controllers.page_controller import render_auth_page
 
-login = Blueprint('login', __name__)
+
+def login_page(request):
+    return render_auth_page(request, 'login')
 
 
-@login.route('/login', methods=['GET', 'POST'])
-def login_page():
-    return render_auth_page('login')
+urlpatterns = [
+    path('login', login_page, name='login'),
+]

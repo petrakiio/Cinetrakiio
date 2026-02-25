@@ -1,26 +1,28 @@
-from flask import Blueprint
+from django.urls import path
 
 from python.controllers.page_controller import render_home_page
 
-home = Blueprint('home', __name__)
+
+def index(request):
+    return render_home_page(request, 'index')
 
 
-@home.route('/')
-@home.route('/index')
-def index():
-    return render_home_page('index')
+def sobre(request):
+    return render_home_page(request, 'sobre')
 
 
-@home.route('/sobre')
-def sobre():
-    return render_home_page('sobre')
+def novidades(request):
+    return render_home_page(request, 'novidades')
 
 
-@home.route('/novidades')
-def novidades():
-    return render_home_page('novidades')
+def aviso(request):
+    return render_home_page(request, 'aviso')
 
 
-@home.route('/aviso')
-def aviso():
-    return render_home_page('aviso')
+urlpatterns = [
+    path('', index, name='index'),
+    path('index', index, name='index_alias'),
+    path('sobre', sobre, name='sobre'),
+    path('novidades', novidades, name='novidades'),
+    path('aviso', aviso, name='aviso'),
+]

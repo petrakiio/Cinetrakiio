@@ -1,40 +1,42 @@
-from flask import Blueprint
+from django.urls import path
 
 from python.controllers.page_controller import render_genre_page
 
-generos = Blueprint('generos', __name__)
+
+def acao(request):
+    return render_genre_page(request, 'acao')
 
 
-@generos.route('/acao')
-def acao():
-    return render_genre_page('acao')
+def comedia(request):
+    return render_genre_page(request, 'comedia')
 
 
-@generos.route('/comedia')
-def comedia():
-    return render_genre_page('comedia')
+def terror(request):
+    return render_genre_page(request, 'terror')
 
 
-@generos.route('/terror')
-def terror():
-    return render_genre_page('terror')
+def brasileiro(request):
+    return render_genre_page(request, 'brasileiro')
 
 
-@generos.route('/brasileiro')
-def brasileiro():
-    return render_genre_page('brasileiro')
+def romance(request):
+    return render_genre_page(request, 'romance')
 
 
-@generos.route('/romance')
-def romance():
-    return render_genre_page('romance')
+def animacao(request):
+    return render_genre_page(request, 'animacao')
 
 
-@generos.route('/animacao')
-def animacao():
-    return render_genre_page('animacao')
+def ficcao(request):
+    return render_genre_page(request, 'ficcao')
 
 
-@generos.route('/ficcao')
-def ficcao():
-    return render_genre_page('ficcao')
+urlpatterns = [
+    path('acao', acao, name='acao'),
+    path('comedia', comedia, name='comedia'),
+    path('terror', terror, name='terror'),
+    path('brasileiro', brasileiro, name='brasileiro'),
+    path('romance', romance, name='romance'),
+    path('animacao', animacao, name='animacao'),
+    path('ficcao', ficcao, name='ficcao'),
+]

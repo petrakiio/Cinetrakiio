@@ -1,10 +1,12 @@
-from flask import Blueprint
+from django.urls import path
 
 from python.controllers.movie_controller import render_movie_page
 
-filme_ficcao = Blueprint('filme_ficcao', __name__)
+
+def filme(request, slug: str):
+    return render_movie_page(request, 'ficcao', slug)
 
 
-@filme_ficcao.route('/filmes/ficcao/<slug>')
-def filme(slug: str):
-    return render_movie_page('ficcao', slug)
+urlpatterns = [
+    path('filmes/ficcao/<slug:slug>', filme, name='filme_ficcao'),
+]

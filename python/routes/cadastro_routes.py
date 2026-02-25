@@ -1,10 +1,12 @@
-from flask import Blueprint
+from django.urls import path
 
 from python.controllers.page_controller import render_auth_page
 
-cadastro = Blueprint('cadastro', __name__)
+
+def cadastro_page(request):
+    return render_auth_page(request, 'cadastro')
 
 
-@cadastro.route('/cadastro', methods=['GET', 'POST'])
-def cadastro_page():
-    return render_auth_page('cadastro')
+urlpatterns = [
+    path('cadastro', cadastro_page, name='cadastro'),
+]
