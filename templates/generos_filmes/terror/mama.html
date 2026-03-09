@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mama</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>Mama</h1>
-        <form action="/HTML/terror.html" method="get">
+        <form action="{% url 'genero_terror' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/terror/mama.jpg') }}" alt="Mama - Filme" />
+        <img src="{% static 'img/terror/mama.jpg' %}" alt="Mama - Filme" />
         <p>
             Mama (2013) é um filme de terror dirigido por Andrés Muschietti que conta a história de duas irmãs que,
             após serem abandonadas em uma cabana na floresta, são protegidas por uma entidade misteriosa chamada "Mama".
@@ -34,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

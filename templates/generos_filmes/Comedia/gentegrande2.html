@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gente Grande 2</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}">
 </head>
 <body>
     <header>
         <h1>Gente Grande 2</h1>
-        <form action="/HTML/comedia.html" method="get">
+        <form action="{% url 'genero_comedia' %}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -18,7 +19,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/comedia/gente grande 2.jpg') }}" alt="Gente Grande 2 - Filme">
+        <img src="{% static 'img/comedia/gente grande 2.jpg' %}" alt="Gente Grande 2 - Filme">
         <p>
             Gente Grande 2 (2013) é a continuação da comédia de sucesso estrelada por Adam Sandler, Kevin James, Chris Rock e David Spade.
             Nesta sequência, Lenny (Sandler) decide se mudar com sua família de volta para sua cidade natal, na tentativa de oferecer uma vida mais tranquila para seus filhos.
@@ -36,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

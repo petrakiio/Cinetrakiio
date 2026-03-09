@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/cadastro.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/cadastro.css' %}">
 </head>
 <body>
     <div class="site-position">
-        <a href="/HTML/layout.html" class="site-href">
+        <a href="{% url 'index' %}" class="site-href">
             <h1 class="site-name">
                 Cinetrakiio🍿
             </h1>
@@ -29,12 +30,12 @@
                 <p>Número</p>
                 <input type="text" placeholder="Número">
                 <button type="submit">Entrar</button>
-                <a href="{{ url_for('login.login_page') }}" class="logado">
+                <a href="{% url 'login' %}" class="logado">
                     Já tem conta?Entre nela
                 </a>
             </form>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

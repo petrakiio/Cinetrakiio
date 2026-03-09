@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Os 6 Ridículos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}">
 </head>
 <body>
     <header>
         <h1>Os 6 Ridículos</h1>
-        <form action="{{ url_for('home.index') }}" method="get">
+        <form action="{% url 'index' %}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -18,7 +19,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/comedia/os 6 ridiculos.jpg') }}" alt="Os 6 Ridículos - Filme">
+        <img src="{% static 'img/comedia/os 6 ridiculos.jpg' %}" alt="Os 6 Ridículos - Filme">
         <p>
             Os 6 Ridículos (2015) é uma comédia faroeste estrelada por Adam Sandler, com um elenco recheado de nomes como Terry Crews, Rob Schneider, Jorge Garcia e Luke Wilson.
             A trama gira em torno de Tommy "Faca Branca", um fora-da-lei criado por nativos americanos que descobre ter cinco meio-irmãos,
@@ -36,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

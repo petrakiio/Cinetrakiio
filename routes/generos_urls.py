@@ -1,5 +1,6 @@
 from django.urls import path
 
+from view.filmes import filme_legado
 from view.generos import acao, animacao, brasileiro, comedia, ficcao, romance, terror
 
 urlpatterns = [
@@ -10,4 +11,5 @@ urlpatterns = [
     path('romance/', romance, name='genero_romance'),
     path('animacao/', animacao, name='genero_animacao'),
     path('ficcao/', ficcao, name='genero_ficcao'),
+    path('<slug:genero_atual>/generosP/<path:legacy_path>', filme_legado, name='filme_legado'),
 ]

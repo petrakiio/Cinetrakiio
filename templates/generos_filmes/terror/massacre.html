@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>O Massacre da Serra Elétrica</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>O Massacre da Serra Elétrica</h1>
-        <form action="/HTML/terror.html" method="get">
+        <form action="{% url 'genero_terror' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/terror/massacre da serra eletrica.webp') }}" alt="O Massacre da Serra Elétrica - Filme" />
+        <img src="{% static 'img/terror/massacre da serra eletrica.webp' %}" alt="O Massacre da Serra Elétrica - Filme" />
         <p>
             O Massacre da Serra Elétrica (1974) é um dos filmes de terror mais icônicos da história do cinema.
             Dirigido por Tobe Hooper, o longa acompanha um grupo de jovens que, ao visitar uma área rural no Texas,
@@ -34,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terror</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/terror.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/terror.css' %}">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
         <h1>Terror</h1>
         <button id="toggleButton">Desativar</button>
         <div id = "confi">
-        <form action="{{ url_for('home.index') }}" method="get">
+        <form action="{% url 'index' %}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -28,50 +29,50 @@
 
     <div class="linha-filmes">
         <div class="filme">
-            <a href="./generosP/terror/abruxa.html">
-                <img src="{{ url_for('static', filename='img/terror/A bruxa.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/abruxa.html' %}">
+                <img src="{% static 'img/terror/A bruxa.webp' %}">
             </a>
-            <a href="./generosP/terror/entidade.html">
-                <img src="{{ url_for('static', filename='img/terror/A entidade.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/entidade.html' %}">
+                <img src="{% static 'img/terror/A entidade.jpg' %}">
             </a>
-            <a href="./generosP/terror/paranormal.html">
-                <img src="{{ url_for('static', filename='img/terror/Atividade Paranormal.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/paranormal.html' %}">
+                <img src="{% static 'img/terror/Atividade Paranormal.webp' %}">
             </a>
-            <a href="./generosP/terror/corra.html">
-                <img src="{{ url_for('static', filename='img/terror/Corra!.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/corra.html' %}">
+                <img src="{% static 'img/terror/Corra!.webp' %}">
             </a>
-            <a href="./generosP/terror/hereditario.html">
-                <img src="{{ url_for('static', filename='img/terror/Hereditario.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/hereditario.html' %}">
+                <img src="{% static 'img/terror/Hereditario.jpg' %}">
             </a>
-            <a href="./generosP/terror/invocaçaõ.html">
-                <img src="{{ url_for('static', filename='img/terror/invocação do mal.png') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/invocaçaõ.html' %}">
+                <img src="{% static 'img/terror/invocação do mal.png' %}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme">
-            <a href="./generosP/terror/it.html">
-                <img src="{{ url_for('static', filename='img/terror/it a coisa.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/it.html' %}">
+                <img src="{% static 'img/terror/it a coisa.webp' %}">
             </a>
-            <a href="./generosP/terror/mama.html">
-                <img src="{{ url_for('static', filename='img/terror/mama.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/mama.html' %}">
+                <img src="{% static 'img/terror/mama.jpg' %}">
             </a>
-            <a href="./generosP/terror/massacre.html">
-                <img src="{{ url_for('static', filename='img/terror/massacre da serra eletrica.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/massacre.html' %}">
+                <img src="{% static 'img/terror/massacre da serra eletrica.webp' %}">
             </a>
-            <a href="./generosP/terror/chuck.html">
-                <img src="{{ url_for('static', filename='img/terror/o culto de chuck.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/chuck.html' %}">
+                <img src="{% static 'img/terror/o culto de chuck.webp' %}">
             </a>
-            <a href="./generosP/terror/exorcita.html">
-                <img src="{{ url_for('static', filename='img/terror/O exorcista.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/exorcita.html' %}">
+                <img src="{% static 'img/terror/O exorcista.webp' %}">
             </a>
-            <a href="./generosP/terror/iluminado.html">
-                <img src="{{ url_for('static', filename='img/terror/O iluminado.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='terror' legacy_path='terror/iluminado.html' %}">
+                <img src="{% static 'img/terror/O iluminado.jpg' %}">
             </a>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script/terror.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/search_generos.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/terror.js' %}"></script>
+    <script src="{% static 'script/search_generos.js' %}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

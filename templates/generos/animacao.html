@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animação</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/animacao.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/animacao.css' %}">
 </head>
 <body>
 
     <header>
         <h1>Animação</h1>
-        <form action="{{ url_for('home.index') }}" method="get">
+        <form action="{% url 'index' %}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -25,49 +26,49 @@
 
     <div class="linha-filmes">
         <div class="filme">
-            <a href="./generosP/Animação/noiva.html">
-                <img src="{{ url_for('static', filename='img/animação/a noiva cadaver.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/noiva.html' %}">
+                <img src="{% static 'img/animação/a noiva cadaver.jpg' %}">
             </a>
-            <a href="./generosP/Animação/castelo.html">
-                <img src="{{ url_for('static', filename='img/animação/castelo animado.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/castelo.html' %}">
+                <img src="{% static 'img/animação/castelo animado.jpg' %}">
             </a>
-            <a href="./generosP/Animação/coraline.html">
-                <img src="{{ url_for('static', filename='img/animação/coraline.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/coraline.html' %}">
+                <img src="{% static 'img/animação/coraline.jpg' %}">
             </a>
-            <a href="./generosP/Animação/eradogelo.html">
-                <img src="{{ url_for('static', filename='img/animação/era do gelo.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/eradogelo.html' %}">
+                <img src="{% static 'img/animação/era do gelo.webp' %}">
             </a>
-            <a href="./generosP/Animação/spiderman.html">
-                <img src="{{ url_for('static', filename='img/animação/homem aranha.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/spiderman.html' %}">
+                <img src="{% static 'img/animação/homem aranha.jpg' %}">
             </a>
-            <a href="./generosP/Animação/kungfupanda.html">
-                <img src="{{ url_for('static', filename='img/animação/kung fu.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/kungfupanda.html' %}">
+                <img src="{% static 'img/animação/kung fu.jpg' %}">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme">
-            <a href="./generosP/Animação/lorax.html">
-                <img src="{{ url_for('static', filename='img/animação/lorax.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/lorax.html' %}">
+                <img src="{% static 'img/animação/lorax.jpg' %}">
             </a>
-            <a href="./generosP/Animação/incriveis.html">
-                <img src="{{ url_for('static', filename='img/animação/os incriveis.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/incriveis.html' %}">
+                <img src="{% static 'img/animação/os incriveis.jpg' %}">
             </a>
-            <a href="./generosP/Animação/ospequeninos.html">
-                <img src="{{ url_for('static', filename='img/animação/os pequeninos.webp') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/ospequeninos.html' %}">
+                <img src="{% static 'img/animação/os pequeninos.webp' %}">
             </a>
-            <a href="./generosP/Animação/poragua.html">
-                <img src="{{ url_for('static', filename='img/animação/por agua abaixo.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/poragua.html' %}">
+                <img src="{% static 'img/animação/por agua abaixo.jpg' %}">
             </a>
-            <a href="./generosP/Animação/ratatuli.html">
-                <img src="{{ url_for('static', filename='img/animação/ratatuli.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/ratatuli.html' %}">
+                <img src="{% static 'img/animação/ratatuli.jpg' %}">
             </a>
-            <a href="./generosP/Animação/upaltas.html">
-                <img src="{{ url_for('static', filename='img/animação/up altas aventuras.jpg') }}">
+            <a href="{% url 'filme_legado' genero_atual='animacao' legacy_path='Animação/upaltas.html' %}">
+                <img src="{% static 'img/animação/up altas aventuras.jpg' %}">
             </a>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script/search_generos.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/search_generos.js' %}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

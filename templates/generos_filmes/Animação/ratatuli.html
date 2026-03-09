@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ratatouille</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>Ratatouille</h1>
-        <form action="/HTML/animacao.html" method="get">
+        <form action="{% url 'genero_animacao' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header>
@@ -19,7 +20,7 @@
             <h2>Descrição</h2>
             <div class="conteudo">
                 <img 
-                    src="{{ url_for('static', filename='img/animação/ratatuli.jpg') }}" 
+                    src="{% static 'img/animação/ratatuli.jpg' %}" 
                     alt="Pôster do filme Ratatouille" 
                 />
     <p>
@@ -48,6 +49,6 @@
             </div>
         </section>
     </main>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

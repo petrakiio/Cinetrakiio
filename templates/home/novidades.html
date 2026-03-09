@@ -1,27 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Novidades</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/novidades.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/banner.css') }}">
+  <link rel="stylesheet" href="{% static 'CSS/novidades.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/banner.css' %}">
 </head>
 <body>
 
 <div class="tab">
-  <a href="{{ url_for('home.index') }}">Início</a>
-  <a href="{{ url_for('login.login_page') }}">Login</a>
-  <a href="{{ url_for('home.sobre') }}">Sobre</a>
+  <a href="{% url 'index' %}">Início</a>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'sobre' %}">Sobre</a>
 </div>
 
 <h1 class="h1">Novidades</h1>
 
 <div class="sliderAutoTrakio">
-  <img src="{{ url_for('static', filename='img/Novidades/50tons.webp') }}" class="slide ativo">
-  <img src="{{ url_for('static', filename='img/Novidades/assasins.webp') }}" class="slide">
-  <img src="{{ url_for('static', filename='img/Novidades/DiasPerfeitos.jpg') }}" class="slide">
-  <img src="{{ url_for('static', filename='img/Novidades/Rambo.webp') }}" class="slide">
+  <img src="{% static 'img/Novidades/50tons.webp' %}" class="slide ativo">
+  <img src="{% static 'img/Novidades/assasins.webp' %}" class="slide">
+  <img src="{% static 'img/Novidades/DiasPerfeitos.jpg' %}" class="slide">
+  <img src="{% static 'img/Novidades/Rambo.webp' %}" class="slide">
 </div>
 
 
@@ -31,7 +32,7 @@
     <!-- Filme 1 -->
     <div class="filme">
       <div class="mediaContainer">
-        <img class="mediaImg visivel" src="{{ url_for('static', filename='img/Novidades/50tons.webp') }}" alt="Imagem" />
+        <img class="mediaImg visivel" src="{% static 'img/Novidades/50tons.webp' %}" alt="Imagem" />
         <iframe
           class="mediaVideo oculto"
           width="560"
@@ -52,7 +53,7 @@
     <!-- Filme 2 -->
     <div class="filme">
       <div class="mediaContainer">
-        <img class="mediaImg visivel" src="{{ url_for('static', filename='img/Novidades/projeto x.webp') }}" alt="Imagem" />
+        <img class="mediaImg visivel" src="{% static 'img/Novidades/projeto x.webp' %}" alt="Imagem" />
         <iframe
           class="mediaVideo oculto"
           width="560"
@@ -73,7 +74,7 @@
     <!--Filme 3-->
     <div class="filme">
       <div class="mediaContainer">
-        <img class="mediaImg visivel" src="{{ url_for('static', filename='img/Novidades/assasins.webp') }}" alt="Imagem" />
+        <img class="mediaImg visivel" src="{% static 'img/Novidades/assasins.webp' %}" alt="Imagem" />
         <iframe
           class="mediaVideo oculto"
           width="560"
@@ -94,7 +95,7 @@
     <!--Filme 4-->
     <div class="filme">
       <div class="mediaContainer">
-        <img class="mediaImg visivel" src="{{ url_for('static', filename='img/Novidades/RockyBalboa.webp') }}" alt="Imagem" />
+        <img class="mediaImg visivel" src="{% static 'img/Novidades/RockyBalboa.webp' %}" alt="Imagem" />
         <iframe
           class="mediaVideo oculto"
           width="560"
@@ -115,7 +116,7 @@
     <!-- Filme 5-->
     <div class="filme">
       <div class="mediaContainer">
-        <img src="{{ url_for('static', filename='img/Novidades/Rambo.webp') }}" alt="Imagem" class="mediaImg visivel">
+        <img src="{% static 'img/Novidades/Rambo.webp' %}" alt="Imagem" class="mediaImg visivel">
         <iframe
         class="mediaVideo oculto"
         width="560"
@@ -137,7 +138,7 @@
 <div class="linha-filmes">
   <div class="filme">
     <div class="mediaContainer">
-    <img src="{{ url_for('static', filename='img/Novidades/you.webp') }}" alt="Imagem" class="mediaImg visivel">
+    <img src="{% static 'img/Novidades/you.webp' %}" alt="Imagem" class="mediaImg visivel">
     <iframe
       class="mediaVideo oculto"
       width="560"
@@ -156,7 +157,7 @@
   <!--Serie 2-->
   <div class="filme">
     <div class="mediaContainer">
-    <img src="{{ url_for('static', filename='img/Novidades/Os originais.jfif') }}" alt="Imagem" class="mediaImg visivel">
+    <img src="{% static 'img/Novidades/Os originais.jfif' %}" alt="Imagem" class="mediaImg visivel">
     <iframe
       class="mediaVideo oculto"
       width="560"
@@ -176,7 +177,7 @@
 
   <div class="filme">
     <div class="mediaContainer">
-    <img src="{{ url_for('static', filename='img/Novidades/DiasPerfeitos.jpg') }}" alt="Imagem" class="mediaImg visivel">
+    <img src="{% static 'img/Novidades/DiasPerfeitos.jpg' %}" alt="Imagem" class="mediaImg visivel">
     <iframe
       class="mediaVideo oculto"
       width="560"
@@ -196,7 +197,7 @@
 
   <div class="filme">
     <div class="mediaContainer">
-    <img src="{{ url_for('static', filename='img/Novidades/Dexter.jfif') }}" alt="Imagem" class="mediaImg visivel">
+    <img src="{% static 'img/Novidades/Dexter.jfif' %}" alt="Imagem" class="mediaImg visivel">
     <iframe
       class="mediaVideo oculto"
       width="560"
@@ -215,7 +216,7 @@
   <!--Serie 5-->
   <div class="filme">
     <div class="mediaContainer">
-    <img src="{{ url_for('static', filename='img/Novidades/thelastfu.webp') }}" alt="Imagem" class="mediaImg visivel">
+    <img src="{% static 'img/Novidades/thelastfu.webp' %}" alt="Imagem" class="mediaImg visivel">
     <iframe
       class="mediaVideo oculto"
       width="560"
@@ -231,8 +232,8 @@
     <button class="voltarMedia" id="button" >Voltar</button>
   </div>
 </div>
-  <script src="{{ url_for('static', filename='script/Noviteste.js') }}"></script>
-  <script src="{{ url_for('static', filename='script/return.js') }}"></script>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+  <script src="{% static 'script/Noviteste.js' %}"></script>
+  <script src="{% static 'script/return.js' %}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

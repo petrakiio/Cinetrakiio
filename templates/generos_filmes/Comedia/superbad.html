@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superbad</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}">
 </head>
 <body>
     <header>
         <h1>Superbad</h1>
-        <form action="/HTML/comedia.html" method="get">
+        <form action="{% url 'genero_comedia' %}" method="get">
             <button class="button" type="submit">
                 Voltar
             </button>
@@ -18,7 +19,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/comedia/SuperBad.webp') }}" alt="Superbad - Filme">
+        <img src="{% static 'img/comedia/SuperBad.webp' %}" alt="Superbad - Filme">
         <p>
             Superbad (2007) é uma comédia adolescente que se tornou um clássico moderno do gênero. A trama acompanha os inseparáveis amigos Seth (Jonah Hill) e Evan (Michael Cera),
             que estão prestes a se formar no colégio e desejam aproveitar ao máximo sua última chance de curtir uma festa épica. 
@@ -36,6 +37,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

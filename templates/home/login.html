@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/login.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
 </head>
 <body>
    <div class="tab">
-            <a href="{{ url_for('home.index') }}">Início</a>
-            <a href="{{ url_for('home.sobre') }}">Sobre</a>
-            <a href="{{ url_for('home.novidades') }}">Novidades</a>
+            <a href="{% url 'index' %}">Início</a>
+            <a href="{% url 'sobre' %}">Sobre</a>
+            <a href="{% url 'novidades' %}">Novidades</a>
         </div>
     <div class="content">
         <div class="container">
@@ -21,12 +22,12 @@
                 <p>Senha</p>
                 <input type="password" placeholder="Senha">
                 <button type="submit">Entrar</button>
-                <a href="{{ url_for('cadastro.cadastro_page') }}" class="cadastro">
+                <a href="{% url 'cadastro' %}" class="cadastro">
                     não tem conta?Crie uma
                 </a>
             </form>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

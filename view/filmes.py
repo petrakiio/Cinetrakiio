@@ -1,4 +1,9 @@
-from django.shortcuts import render
+import os
+import unicodedata
+
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse
 
 
 MOVIES_BY_GENRE = {
@@ -80,6 +85,7 @@ MOVIES_BY_GENRE = {
         'docenovembro': 'generos_filmes/Romance/docenovembro.html',
         'iloveyou': 'generos_filmes/Romance/iloveyou.html',
         'lembrancas': 'generos_filmes/Romance/lembranças.html',
+        'mechamepelonome': 'generos_filmes/generos_layout/mechamepelonome.html',
         'naturezaselvagem': 'generos_filmes/Romance/naturezaselvagem.html',
         'orgulhopreconceito': 'generos_filmes/Romance/orgulho&preconceito.html',
         'pacienteingles': 'generos_filmes/Romance/pacienteingles.html',
@@ -100,6 +106,39 @@ MOVIES_BY_GENRE = {
         'iluminado': 'generos_filmes/terror/iluminado.html',
     },
 }
+
+
+LEGACY_GENRE_ALIASES = {
+    'acao': 'acao',
+    'açao': 'acao',
+    'ação': 'acao',
+    'animacao': 'animacao',
+    'animaçao': 'animacao',
+    'animação': 'animacao',
+    'braseleiro': 'brasileiro',
+    'brasileiro': 'brasileiro',
+    'comedia': 'comedia',
+    'ficcao': 'ficcao',
+    'ficçao': 'ficcao',
+    'ficção': 'ficcao',
+    'romance': 'romance',
+    'terror': 'terror',
+}
+
+
+def _normalize_legacy_token(value: str) -> str:
+    normalized = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    return ''.join(ch for ch in normalized.lower() if ch.isalnum())
+
+
+LEGACY_FILE_TO_SLUG_BY_GENRE = {}
+for genre_name, movies in MOVIES_BY_GENRE.items():
+    file_to_slug = {}
+    for slug, template_name in movies.items():
+        filename = os.path.splitext(os.path.basename(template_name))[0]
+        file_to_slug[_normalize_legacy_token(filename)] = slug
+        file_to_slug[_normalize_legacy_token(slug)] = slug
+    LEGACY_FILE_TO_SLUG_BY_GENRE[genre_name] = file_to_slug
 
 
 def _render_movie(request, genre_name: str, slug: str):
@@ -135,3 +174,28 @@ def filme_animacao(request, slug: str):
 
 def filme_ficcao(request, slug: str):
     return _render_movie(request, 'ficcao', slug)
+
+
+def filme_legado(request: HttpRequest, genero_atual: str, legacy_path: str) -> HttpResponse:
+    parts = [part for part in legacy_path.split('/') if part]
+    if len(parts) < 2:
+        return render(request, 'home/aviso.html', status=404)
+
+    legacy_genre, legacy_file = parts[-2], parts[-1]
+    legacy_file = legacy_file.removesuffix('.html')
+
+    canonical_genre = LEGACY_GENRE_ALIASES.get(legacy_genre.lower())
+    if not canonical_genre:
+        canonical_genre = LEGACY_GENRE_ALIASES.get(_normalize_legacy_token(legacy_genre))
+    if not canonical_genre:
+        canonical_genre = LEGACY_GENRE_ALIASES.get(genero_atual.lower())
+    if not canonical_genre:
+        canonical_genre = LEGACY_GENRE_ALIASES.get(_normalize_legacy_token(genero_atual))
+    if not canonical_genre:
+        return render(request, 'home/aviso.html', status=404)
+
+    slug = LEGACY_FILE_TO_SLUG_BY_GENRE.get(canonical_genre, {}).get(_normalize_legacy_token(legacy_file))
+    if not slug:
+        return render(request, 'home/aviso.html', status=404)
+
+    return redirect(reverse(f'filme_{canonical_genre}', kwargs={'slug': slug}))

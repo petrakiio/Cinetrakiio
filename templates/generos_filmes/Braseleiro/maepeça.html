@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Minha Mãe é uma Peça</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>Minha Mãe é uma Peça</h1>
-        <form action="/HTML/brasileiro.html" method="get">
+        <form action="{% url 'genero_brasileiro' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/brasileiro/Minha Mãe é uma Peça.jpg') }}" alt="Minha Mãe é uma Peça - Filme" />
+        <img src="{% static 'img/brasileiro/Minha Mãe é uma Peça.jpg' %}" alt="Minha Mãe é uma Peça - Filme" />
         <p>
             "Minha Mãe é uma Peça" (2013) é uma comédia brasileira estrelada e escrita por Paulo Gustavo, baseada em sua peça de teatro de mesmo nome.
             O filme acompanha Dona Hermínia, uma mãe superprotetora, hilária e cheia de opiniões, que vive intensamente a maternidade mesmo com os filhos já crescidos.
@@ -34,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

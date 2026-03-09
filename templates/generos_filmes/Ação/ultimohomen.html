@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Até o Ultimo homem</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}">
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}">
 </head>
 <body>
     <header>
         <h1>Clube da luta</h1>
-        <form action="/HTML/acao.html" method="get">
+        <form action="{% url 'genero_acao' %}" method="get">
         <button class="button" type="submit">
             Voltar
         </button>
@@ -17,7 +18,7 @@
     </header><br>
     <h2>descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/ação/ate o ultimo homem.jpg') }}">
+        <img src="{% static 'img/ação/ate o ultimo homem.jpg' %}">
         <p>
             "Até o Último Homem" é um filme de guerra baseado na história real de Desmond Doss, um médico do exército 
             americano que serviu na Segunda Guerra Mundial.
@@ -33,6 +34,6 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
   </iframe>    
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

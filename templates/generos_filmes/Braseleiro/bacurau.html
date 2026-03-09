@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bacurau</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>Bacurau</h1>
-        <form action="/HTML/brasileiro.html" method="get">
+        <form action="{% url 'genero_brasileiro' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/brasileiro/bacurau.jpg') }}" alt="Bacurau - Filme" />
+        <img src="{% static 'img/brasileiro/bacurau.jpg' %}" alt="Bacurau - Filme" />
         <p>
             Bacurau (2019) é um filme brasileiro de drama e suspense dirigido por Kleber Mendonça Filho e Juliano Dornelles.
             A história acompanha os moradores de uma pequena comunidade no sertão de Pernambuco que, após a morte da matriarca,
@@ -34,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

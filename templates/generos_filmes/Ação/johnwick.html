@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>John Wick</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>Exterminador do Futuro</h1>
-        <form action="/HTML/acao.html" method="get">
+        <form action="{% url 'genero_acao' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header>
@@ -17,7 +18,7 @@
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/ação/John Wick.webp') }}" alt="Pôster do filme Exterminador do Futuro" />
+        <img src="{% static 'img/ação/John Wick.webp' %}" alt="Pôster do filme Exterminador do Futuro" />
         <p>
             Após a morte de sua esposa, o ex-assassino de aluguel John Wick leva uma vida solitária e pacífica.
              Quando o filho de um mafioso russo invade sua casa, rouba seu carro e mata seu cachorro 
@@ -35,6 +36,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     ></iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>

@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>It: A Coisa</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/generosP.css') }}" />
+    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
 </head>
 <body>
     <header>
         <h1>It: A Coisa</h1>
-        <form action="/HTML/terror.html" method="get">
+        <form action="{% url 'genero_terror' %}" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{{ url_for('static', filename='img/terror/it a coisa.webp') }}" alt="It: A Coisa - Filme" />
+        <img src="{% static 'img/terror/it a coisa.webp' %}" alt="It: A Coisa - Filme" />
         <p>
             It: A Coisa (2017) é um filme de terror baseado no romance de Stephen King que acompanha um grupo de crianças,
             conhecido como o Clube dos Perdedores, que enfrenta uma entidade maléfica que assume a forma do palhaço Pennywise.
@@ -34,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{{ url_for('static', filename='script/theme-global.js') }}"></script>
+    <script src="{% static 'script/theme-global.js' %}"></script>
 </body>
 </html>
