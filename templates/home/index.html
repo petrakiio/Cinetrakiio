@@ -43,7 +43,6 @@
 
     <!-- Gêneros -->
     <div class="generos">
-        
         <a href="{% url 'genero_comedia' %}">Comédia</a>
         <a href="{% url 'genero_acao' %}">Ação</a>
         <a href="{% url 'genero_terror' %}">Terror</a>
@@ -53,16 +52,24 @@
         <a href="{% url 'genero_ficcao' %}">Ficção</a>
     </div>
 
+    <section id="cards-procedural"></section>
+
     <!-- Scripts -->
     <script src="{% static 'script/banner.js' %}"></script>
     <script src="{% static 'script/anim.js' %}"></script>
     <script src="{% static 'script/modo.js' %}"></script>
+    <script src="{% static 'script/home_cards.js' %}"></script>
     <script src="{% static 'script/search_index.js' %}"></script>
     <script src="{% static 'script/topbar.js' %}"></script>
 </body>
 
 <footer>
-    <a href="{% url 'aviso' %}">Políticas de Privacidade</a>
+    <table>
+        <tr>
+            <td><a href="{% url 'aviso' %}">Políticas de Privacidade</a></td>
+        </tr>
+        <tr id="social-links-row"></tr>
+    </table>
 </footer>
 
 <script src="{% static 'script/social_links.js' %}"></script>
