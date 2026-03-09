@@ -1,7 +1,7 @@
 from django.urls import path
 
-from view.filmes import filme_legado
-from view.generos import acao, animacao, brasileiro, comedia, ficcao, romance, terror
+from controllers.filmes_controller import filme_legado
+from controllers.generos_controller import acao, animacao, brasileiro, comedia, ficcao, romance, terror
 
 urlpatterns = [
     path('acao/', acao, name='genero_acao'),

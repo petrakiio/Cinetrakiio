@@ -1,6 +1,6 @@
 from django.urls import path
 
-from view.login import cadastro_page, login_page
+from controllers.login_controller import cadastro_page, login_page
 
 urlpatterns = [
     path('login/', login_page, name='login'),

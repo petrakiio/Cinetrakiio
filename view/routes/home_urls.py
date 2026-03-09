@@ -1,6 +1,6 @@
 from django.urls import path
 
-from view.home import aviso, index, legacy_html_page, novidades, sobre
+from controllers.home_controller import aviso, index, legacy_html_page, novidades, sobre
 
 urlpatterns = [
     path('', index, name='index'),

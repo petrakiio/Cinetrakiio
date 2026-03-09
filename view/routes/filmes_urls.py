@@ -1,6 +1,6 @@
 from django.urls import path
 
-from view.filmes import (
+from controllers.filmes_controller import (
     filme_acao,
     filme_animacao,
     filme_brasileiro,
