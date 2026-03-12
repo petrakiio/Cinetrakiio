@@ -53,7 +53,7 @@ const filmes = {
         { "id": 44, "nome": "Debi e Loide", "img": "../Imagens/comedia/debi$loide.jfif", "link": "./generosP/Comedia/debiloide.html" },
         { "id": 45, "nome": "Jojo Rabbit", "img": "../Imagens/comedia/Jojo rabbit.webp", "link": "./generosP/Comedia/jojorabbit.html" },
         { "id": 46, "nome": "O Virgem aos 40", "img": "../Imagens/comedia/O virgem aos 40.webp", "link": "./generosP/Comedia/virgem40.html" },
-        { "id": 47, "nome": "Os 6 Ridículos", "img": "../Imagens/comedia/Os 6 ridiculos.jpg", "link": "./generosP/Comedia/6ridiculos.html" },
+        { "id": 47, "nome": "Os 6 Ridículos", "img": "../Imagens/comedia/Os6ridiculos.jpg", "link": "./generosP/Comedia/6ridiculos.html" },
         { "id": 48, "nome": "Segurança de Shopping", "img": "../Imagens/comedia/Segurança de guarda.webp", "link": "./generosP/Comedia/segurança.html" }
     ],
     "Ficcao": [
