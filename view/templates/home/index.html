@@ -52,13 +52,29 @@
         <a href="{% url 'genero_ficcao' %}">Ficção</a>
     </div>
 
-    <section id="cards-procedural"></section>
+    <section id="cards-procedural">
+        {% for section in sections %}
+            <h2 class="categoria">{{ section.titulo }}</h2>
+            <div class="linha-filmes">
+                {% for filme in section.filmes %}
+                    <div class="filme">
+                        <a class="filme-card" href="{% url section.route_name slug=filme.slug %}">
+                            <img src="{{ filme.imagem|default:logo_url }}" alt="{{ filme.titulo }}">
+                            <div class="filme-info">
+                                <h3>{{ filme.titulo }}</h3>
+                                <span>{{ section.genero.nome }}</span>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </section>
 
     <!-- Scripts -->
     <script src="{% static 'script/banner.js' %}"></script>
     <script src="{% static 'script/anim.js' %}"></script>
     <script src="{% static 'script/modo.js' %}"></script>
-    <script src="{% static 'script/home_cards.js' %}"></script>
     <script src="{% static 'script/search_index.js' %}"></script>
     <script src="{% static 'script/topbar.js' %}"></script>
 </body>
