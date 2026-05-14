@@ -6,11 +6,10 @@
     <title>CineTrakio</title>
 
     <!-- Estilos -->
-     {% load static %}
-    <link rel="shortcut icon" href="{% static 'img/Logos/Logo.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'CSS/layout.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/banner.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/menu.css' %}">
+<link rel="shortcut icon" href="../../static/img/Logos/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../static/CSS/layout.css">
+    <link rel="stylesheet" href="../../static/CSS/banner.css">
+    <link rel="stylesheet" href="../../static/CSS/menu.css">
 </head>
 
 <body>
@@ -25,9 +24,9 @@
         <div class="tab" id="mainMenu">
             <button class="menu-close" id="menuClose" type="button">Fechar ✕</button>
 
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'sobre' %}">Sobre</a>
-            <a href="{% url 'novidades' %}">Novidades</a>
+            <a href="login.html">Login</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="novidades.html">Novidades</a>
 
             <button id="modo">Modo Claro</button>
         </div>
@@ -35,58 +34,441 @@
 
     <!-- Banner automático -->
     <div class="sliderAutoTrakio" id="banner">
-        <img src="{% static 'img/ação/ate o ultimo homem.jpg' %}" class="slide ativo">
-        <img src="{% static 'img/comedia/gente grande 2.jpg' %}" class="slide">
-        <img src="{% static 'img/animação/os incriveis.jpg' %}" class="slide">
-        <img src="{% static 'img/terror/mama.jpg' %}" class="slide">
+        <img src="../../static/img/ação/ate o ultimo homem.jpg" class="slide ativo">
+        <img src="../../static/img/comedia/gente grande 2.jpg" class="slide">
+        <img src="../../static/img/animação/os incriveis.jpg" class="slide">
+        <img src="../../static/img/terror/mama.jpg" class="slide">
     </div>
 
     <!-- Gêneros -->
     <div class="generos">
-        <a href="{% url 'genero_comedia' %}">Comédia</a>
-        <a href="{% url 'genero_acao' %}">Ação</a>
-        <a href="{% url 'genero_terror' %}">Terror</a>
-        <a href="{% url 'genero_brasileiro' %}">Brasileiro</a>
-        <a href="{% url 'genero_romance' %}">Romance</a>
-        <a href="{% url 'genero_animacao' %}">Animação</a>
-        <a href="{% url 'genero_ficcao' %}">Ficção</a>
+        <a href="../generos/comedia.html">Comédia</a>
+        <a href="../generos/acao.html">Ação</a>
+        <a href="../generos/terror.html">Terror</a>
+        <a href="../generos/brasileiro.html">Brasileiro</a>
+        <a href="../generos/romance.html">Romance</a>
+        <a href="../generos/animacao.html">Animação</a>
+        <a href="../generos/ficcao.html">Ficção</a>
     </div>
 
     <section id="cards-procedural">
-        {% for section in sections %}
-            <h2 class="categoria">{{ section.titulo }}</h2>
-            <div class="linha-filmes">
-                {% for filme in section.filmes %}
-                    <div class="filme">
-                        <a class="filme-card" href="{% url section.route_name slug=filme.slug %}">
-                            <img src="{{ filme.imagem|default:logo_url }}" alt="{{ filme.titulo }}">
-                            <div class="filme-info">
-                                <h3>{{ filme.titulo }}</h3>
-                                <span>{{ section.genero.nome }}</span>
-                            </div>
-                        </a>
+        <h2 class="categoria">Ação</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/alertavermelho.html">
+                    <img src="../../static/img/ação/alerta vermelho.webp" alt="Alerta Vermelho">
+                    <div class="filme-info">
+                        <h3>Alerta Vermelho</h3>
+                        <span>Ação</span>
                     </div>
-                {% endfor %}
+                </a>
             </div>
-        {% endfor %}
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/ultimohomen.html">
+                    <img src="../../static/img/ação/ate o ultimo homem.jpg" alt="Até o Último Homem">
+                    <div class="filme-info">
+                        <h3>Até o Último Homem</h3>
+                        <span>Ação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/badboys.html">
+                    <img src="../../static/img/ação/bad boys.webp" alt="Bad Boys">
+                    <div class="filme-info">
+                        <h3>Bad Boys</h3>
+                        <span>Ação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/clube_luta.html">
+                    <img src="../../static/img/ação/clube da luta.webp" alt="Clube da Luta">
+                    <div class="filme-info">
+                        <h3>Clube da Luta</h3>
+                        <span>Ação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/durodematar.html">
+                    <img src="../../static/img/ação/duro de matar.jpg" alt="Duro de Matar">
+                    <div class="filme-info">
+                        <h3>Duro de Matar</h3>
+                        <span>Ação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ação/missaoimpossivel.html">
+                    <img src="../../static/img/ação/missão impossivel.jpg" alt="Missão Impossível">
+                    <div class="filme-info">
+                        <h3>Missão Impossível</h3>
+                        <span>Ação</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Comédia</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/branquelas.html">
+                    <img src="../../static/img/comedia/As branquelas.jpeg" alt="As Branquelas">
+                    <div class="filme-info">
+                        <h3>As Branquelas</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/click.html">
+                    <img src="../../static/img/comedia/Click.jpg" alt="Click">
+                    <div class="filme-info">
+                        <h3>Click</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/deadpool.html">
+                    <img src="../../static/img/comedia/DeadPool.png" alt="Deadpool">
+                    <div class="filme-info">
+                        <h3>Deadpool</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/esposa.html">
+                    <img src="../../static/img/comedia/esposa de mentirinhae.jpg" alt="Esposa de Mentirinha">
+                    <div class="filme-info">
+                        <h3>Esposa de Mentirinha</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/feriasfrustadas.html">
+                    <img src="../../static/img/comedia/ferias frustadas.jpg" alt="Férias Frustradas">
+                    <div class="filme-info">
+                        <h3>Férias Frustradas</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Comedia/superbad.html">
+                    <img src="../../static/img/comedia/SuperBad.webp" alt="SuperBad">
+                    <div class="filme-info">
+                        <h3>SuperBad</h3>
+                        <span>Comédia</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Animação</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/noiva.html">
+                    <img src="../../static/img/animação/a noiva cadaver.jpg" alt="A Noiva Cadáver">
+                    <div class="filme-info">
+                        <h3>A Noiva Cadáver</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/castelo.html">
+                    <img src="../../static/img/animação/castelo animado.jpg" alt="Castelo Animado">
+                    <div class="filme-info">
+                        <h3>Castelo Animado</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/coraline.html">
+                    <img src="../../static/img/animação/coraline.jpg" alt="Coraline">
+                    <div class="filme-info">
+                        <h3>Coraline</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/eradogelo.html">
+                    <img src="../../static/img/animação/era do gelo.webp" alt="Era do Gelo">
+                    <div class="filme-info">
+                        <h3>Era do Gelo</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/spiderman.html">
+                    <img src="../../static/img/animação/homem aranha.jpg" alt="Homem Aranha">
+                    <div class="filme-info">
+                        <h3>Homem Aranha</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Animação/kungfupanda.html">
+                    <img src="../../static/img/animação/kung fu.jpg" alt="Kung Fu Panda">
+                    <div class="filme-info">
+                        <h3>Kung Fu Panda</h3>
+                        <span>Animação</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Brasileiro</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/bacurau.html">
+                    <img src="../../static/img/brasileiro/bacurau.jpg" alt="Bacurau">
+                    <div class="filme-info">
+                        <h3>Bacurau</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/areia.html">
+                    <img src="../../static/img/brasileiro/capitaes da areia.jpg" alt="Capitães da Areia">
+                    <div class="filme-info">
+                        <h3>Capitães da Areia</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/carandiru.html">
+                    <img src="../../static/img/brasileiro/carandiru.jpg" alt="Carandiru">
+                    <div class="filme-info">
+                        <h3>Carandiru</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/central.html">
+                    <img src="../../static/img/brasileiro/cemtral brasil.jpg" alt="Central do Brasil">
+                    <div class="filme-info">
+                        <h3>Central do Brasil</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/cidadeDeus.html">
+                    <img src="../../static/img/brasileiro/cidade de deus.jpg" alt="Cidade de Deus">
+                    <div class="filme-info">
+                        <h3>Cidade de Deus</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Braseleiro/estomago.html">
+                    <img src="../../static/img/brasileiro/Estômago.jpg" alt="Estômago">
+                    <div class="filme-info">
+                        <h3>Estômago</h3>
+                        <span>Brasileiro</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Ficção</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/alien.html">
+                    <img src="../../static/img/ficção/alien.webp" alt="Alien">
+                    <div class="filme-info">
+                        <h3>Alien</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/bladerunner.html">
+                    <img src="../../static/img/ficção/blade runner.jpg" alt="Blade Runner">
+                    <div class="filme-info">
+                        <h3>Blade Runner</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/guardioes.html">
+                    <img src="../../static/img/ficção/guardião.webp" alt="Guardiões">
+                    <div class="filme-info">
+                        <h3>Guardiões</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/harry.html">
+                    <img src="../../static/img/ficção/harry potter.jpg" alt="Harry Potter">
+                    <div class="filme-info">
+                        <h3>Harry Potter</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/jurasicpark.html">
+                    <img src="../../static/img/ficção/jurassic park.jpg" alt="Jurassic Park">
+                    <div class="filme-info">
+                        <h3>Jurassic Park</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Ficção/matrix.html">
+                    <img src="../../static/img/ficção/matrix.jpg" alt="Matrix">
+                    <div class="filme-info">
+                        <h3>Matrix</h3>
+                        <span>Ficção</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Romance</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/antesdeamanhecer.html">
+                    <img src="../../static/img/romance/Antes de amanhecer.webp" alt="Antes de Amanhecer">
+                    <div class="filme-info">
+                        <h3>Antes de Amanhecer</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/Azuleacormaisquente.html">
+                    <img src="../../static/img/romance/Azul é a cor mais quente.jpg" alt="Azul é a Cor Mais Quente">
+                    <div class="filme-info">
+                        <h3>Azul é a Cor Mais Quente</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/comoperderumhomem.html">
+                    <img src="../../static/img/romance/como perder um homem.webp" alt="Como Perder um Homem">
+                    <div class="filme-info">
+                        <h3>Como Perder um Homem</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/diariopaixão.html">
+                    <img src="../../static/img/romance/Diario de uma paixão.jpg" alt="Diário de uma Paixão">
+                    <div class="filme-info">
+                        <h3>Diário de uma Paixão</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/docenovembro.html">
+                    <img src="../../static/img/romance/Doce Novembro.jpg" alt="Doce Novembro">
+                    <div class="filme-info">
+                        <h3>Doce Novembro</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/Romance/lembranças.html">
+                    <img src="../../static/img/romance/Lembranças.webp" alt="Lembranças">
+                    <div class="filme-info">
+                        <h3>Lembranças</h3>
+                        <span>Romance</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h2 class="categoria">Terror</h2>
+        <div class="linha-filmes">
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/abruxa.html">
+                    <img src="../../static/img/terror/A bruxa.webp" alt="A Bruxa">
+                    <div class="filme-info">
+                        <h3>A Bruxa</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/entidade.html">
+                    <img src="../../static/img/terror/A entidade.jpg" alt="A Entidade">
+                    <div class="filme-info">
+                        <h3>A Entidade</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/paranormal.html">
+                    <img src="../../static/img/terror/Atividade Paranormal.webp" alt="Atividade Paranormal">
+                    <div class="filme-info">
+                        <h3>Atividade Paranormal</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/corra.html">
+                    <img src="../../static/img/terror/Corra!.webp" alt="Corra!">
+                    <div class="filme-info">
+                        <h3>Corra!</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/hereditario.html">
+                    <img src="../../static/img/terror/Hereditario.jpg" alt="Hereditário">
+                    <div class="filme-info">
+                        <h3>Hereditário</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+            <div class="filme">
+                <a class="filme-card" href="../generos_filmes/terror/invocaçaõ.html">
+                    <img src="../../static/img/terror/invocação do mal.png" alt="Invocação do Mal">
+                    <div class="filme-info">
+                        <h3>Invocação do Mal</h3>
+                        <span>Terror</span>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Scripts -->
-    <script src="{% static 'script/banner.js' %}"></script>
-    <script src="{% static 'script/anim.js' %}"></script>
-    <script src="{% static 'script/modo.js' %}"></script>
-    <script src="{% static 'script/search_index.js' %}"></script>
-    <script src="{% static 'script/topbar.js' %}"></script>
+    <script src="../../static/script/banner.js"></script>
+    <script src="../../static/script/anim.js"></script>
+    <script src="../../static/script/modo.js"></script>
+    <script src="../../static/script/search_index.js"></script>
+    <script src="../../static/script/topbar.js"></script>
 </body>
 
 <footer>
     <table>
         <tr>
-            <td><a href="{% url 'aviso' %}">Políticas de Privacidade</a></td>
+            <td><a href="aviso.html">Políticas de Privacidade</a></td>
         </tr>
         <tr id="social-links-row"></tr>
     </table>
 </footer>
 
-<script src="{% static 'script/social_links.js' %}"></script>
+<script src="../../static/script/social_links.js"></script>
 </html>

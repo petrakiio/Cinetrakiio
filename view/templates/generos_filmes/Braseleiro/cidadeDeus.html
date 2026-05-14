@@ -1,23 +1,23 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cidade de Deus</title>
-    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
+    <link rel="stylesheet" href="../../../static/CSS/generosP.css" />
 </head>
 <body>
     <header>
         <h1>Cidade de Deus</h1>
-        <form action="{% url 'genero_brasileiro' %}" method="get">
+        <form action="../../generos/brasileiro.html" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{% static 'img/brasileiro/cidade de deus.jpg' %}" alt="Cidade de Deus - Filme" />
+        <img src="../../../static/img/brasileiro/cidade de deus.jpg" alt="Cidade de Deus - Filme" />
         <p>
             Cidade de Deus (2002) é um aclamado filme brasileiro dirigido por Fernando Meirelles e codirigido por Kátia Lund.
             Baseado no livro de Paulo Lins, o filme retrata o crescimento do crime organizado na favela Cidade de Deus, no Rio de Janeiro, ao longo das décadas de 1960 a 1980.
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{% static 'script/theme-global.js' %}"></script>
+    <script src="../../../static/script/theme-global.js"></script>
 </body>
 </html>

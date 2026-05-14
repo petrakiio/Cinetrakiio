@@ -1,17 +1,17 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <link rel="stylesheet" href="../../static/CSS/login.css">
 </head>
 <body>
    <div class="tab">
-            <a href="{% url 'index' %}">Início</a>
-            <a href="{% url 'sobre' %}">Sobre</a>
-            <a href="{% url 'novidades' %}">Novidades</a>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="novidades.html">Novidades</a>
         </div>
     <div class="content">
         <div class="container">
@@ -22,12 +22,12 @@
                 <p>Senha</p>
                 <input type="password" placeholder="Senha">
                 <button type="submit">Entrar</button>
-                <a href="{% url 'cadastro' %}" class="cadastro">
+                <a href="cadastro.html" class="cadastro">
                     não tem conta?Crie uma
                 </a>
             </form>
         </div>
     </div>
-    <script src="{% static 'script/theme-global.js' %}"></script>
+    <script src="../../static/script/theme-global.js"></script>
 </body>
 </html>

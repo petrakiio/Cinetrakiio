@@ -1,16 +1,16 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficção</title>
-    <link rel="stylesheet" href="{% static 'CSS/ficcao.css' %}">
+    <link rel="stylesheet" href="../../static/CSS/ficcao.css">
 </head>
 <body>
     <header>
         <h1 >Ficção</h1>
-            <form action="{% url 'index' %}" method="get">
+            <form action="../home/index.html" method="get">
                 <button class="button" type="submit">
                     Voltar
                 </button>
@@ -25,50 +25,50 @@
         </form>
     <div class="linha-filmes">
         <div class="filme">
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/alien.html' %}">
-                <img src="{% static 'img/ficção/alien.webp' %}">
+            <a href="../generos_filmes/Ficção/alien.html">
+                <img src="../../static/img/ficção/alien.webp">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/bladerunner.html' %}">
-                <img src="{% static 'img/ficção/blade runner.jpg' %}">
+            <a href="../generos_filmes/Ficção/bladerunner.html">
+                <img src="../../static/img/ficção/blade runner.jpg">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/guardioes.html' %}">
-                <img src="{% static 'img/ficção/guardião.webp' %}">
+            <a href="../generos_filmes/Ficção/guardioes.html">
+                <img src="../../static/img/ficção/guardião.webp">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/harry.html' %}">
-                <img src="{% static 'img/ficção/harry potter.jpg' %}">
+            <a href="../generos_filmes/Ficção/harry.html">
+                <img src="../../static/img/ficção/harry potter.jpg">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/jurasicpark.html' %}">
-                <img src="{% static 'img/ficção/jurassic park.jpg' %}">
+            <a href="../generos_filmes/Ficção/jurasicpark.html">
+                <img src="../../static/img/ficção/jurassic park.jpg">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/jurasicpark.html' %}">
-                <img src="{% static 'img/ficção/lugar silencioso.webp' %}">
+            <a href="../generos_filmes/Ficção/jurasicpark.html">
+                <img src="../../static/img/ficção/lugar silencioso.webp">
             </a>
         </div>
     </div>
     <div class="linha-filmes">
         <div class="filme"> 
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/matrix.html' %}">
-                <img src="{% static 'img/ficção/matrix.jpg' %}">
+            <a href="../generos_filmes/Ficção/matrix.html">
+                <img src="../../static/img/ficção/matrix.jpg">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/show.html' %}">
-                <img src="{% static 'img/ficção/o show de trumam.webp' %}">
+            <a href="../generos_filmes/Ficção/show.html">
+                <img src="../../static/img/ficção/o show de trumam.webp">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/piratas.html' %}">
-                <img src="{% static 'img/ficção/pirata do caribe.jpg' %}">
+            <a href="../generos_filmes/Ficção/piratas.html">
+                <img src="../../static/img/ficção/pirata do caribe.jpg">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/star.html' %}">
-                <img src="{% static 'img/ficção/star wars.png' %}">
+            <a href="../generos_filmes/Ficção/star.html">
+                <img src="../../static/img/ficção/star wars.png">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/uncharted.html' %}">
-                <img src="{% static 'img/ficção/uncharted.webp' %}">
+            <a href="../generos_filmes/Ficção/uncharted.html">
+                <img src="../../static/img/ficção/uncharted.webp">
             </a>
-            <a href="{% url 'filme_legado' genero_atual='ficcao' legacy_path='Ficção/interstelar.html' %}">
-                <img src="{% static 'img/ficção/interstellar.webp' %}">
+            <a href="../generos_filmes/Ficção/interstelar.html">
+                <img src="../../static/img/ficção/interstellar.webp">
             </a>
         </div>
     </div>
-    <script src="{% static 'script/ficcao.js' %}"></script>
-    <script src="{% static 'script/search_generos.js' %}"></script>
-    <script src="{% static 'script/theme-global.js' %}"></script>
+    <script src="../../static/script/ficcao.js"></script>
+    <script src="../../static/script/search_generos.js"></script>
+    <script src="../../static/script/theme-global.js"></script>
 </body>
 </html>

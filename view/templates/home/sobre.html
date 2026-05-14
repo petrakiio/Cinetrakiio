@@ -1,18 +1,18 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre</title>
-    <link rel="stylesheet" href="{% static 'CSS/sobre.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/banner.css' %}">
+    <link rel="stylesheet" href="../../static/CSS/sobre.css">
+    <link rel="stylesheet" href="../../static/CSS/banner.css">
 </head>
 <body>
        <div class="tab">
-            <a href="{% url 'index' %}">Início</a>
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'novidades' %}">Novidades</a>
+            <a href="index.html">Início</a>
+            <a href="login.html">Login</a>
+            <a href="novidades.html">Novidades</a>
         </div>
         <h1>Sobre CineTrakio</h1>
             <br>
@@ -21,13 +21,13 @@
         <p>com varios filmes gratis!!</p>
     </div>
     <div class="sliderAutoTrakio">
-        <img src="{% static 'img/animação/homem aranha.jpg' %}" class="slide ativo">
-        <img src="{% static 'img/brasileiro/Estômago.jpg' %}" class="slide">
-        <img src="{% static 'img/romance/O paciente inglês.jpg' %}"class="slide">
-        <img src="{% static 'img/terror/it a coisa.webp' %}" class="slide">
-        <img src="{% static 'img/ficção/lugar silencioso.webp' %}" class="slide">
-        <img src="{% static 'img/terror/invocação do mal.png' %}" class="slide">
-        <img src="{% static 'img/ficção/o show de trumam.webp' %}" class="slide">
+        <img src="../../static/img/animação/homem aranha.jpg" class="slide ativo">
+        <img src="../../static/img/brasileiro/Estômago.jpg" class="slide">
+        <img src="../../static/img/romance/O paciente inglês.jpg"class="slide">
+        <img src="../../static/img/terror/it a coisa.webp" class="slide">
+        <img src="../../static/img/ficção/lugar silencioso.webp" class="slide">
+        <img src="../../static/img/terror/invocação do mal.png" class="slide">
+        <img src="../../static/img/ficção/o show de trumam.webp" class="slide">
     </div>
     <section class="feedback-box div">
       <h2>Avalie o CineTrakio</h2>
@@ -56,9 +56,8 @@
       <ul id="listaFeedback" class="feedback-list"></ul>
       <p id="dev">Nenhum feedback enviado ainda.</p>
     </section>
-    <script src="{% static 'script/return.js' %}"></script>
-    <script src="{% static 'script/banner.js' %}"></script>
-    <script src="{% static 'script/feedback.js' %}"></script>
-    <script src="{% static 'script/theme-global.js' %}"></script>
+    <script src="../../static/script/return.js"></script>
+    <script src="../../static/script/banner.js"></script>
+    <script src="../../static/script/theme-global.js"></script>
 </body>
 </html>

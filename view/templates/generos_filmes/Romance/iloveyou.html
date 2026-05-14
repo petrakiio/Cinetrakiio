@@ -1,23 +1,23 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>P.S. Eu Te Amo</title>
-    <link rel="stylesheet" href="{% static 'CSS/generosP.css' %}" />
+    <link rel="stylesheet" href="../../../static/CSS/generosP.css" />
 </head>
 <body>
     <header>
         <h1>P.S. Eu Te Amo</h1>
-        <form action="{% url 'genero_romance' %}" method="get">
+        <form action="../../generos/romance.html" method="get">
             <button class="button" type="submit">Voltar</button>
         </form>
     </header><br />
 
     <h2>Descrição</h2>
     <main class="conteudo">
-        <img src="{% static 'img/romance/P.S. Eu Te Amo.jpg' %}" alt="P.S. Eu Te Amo - Filme" />
+        <img src="../../../static/img/romance/P.S. Eu Te Amo.jpg" alt="P.S. Eu Te Amo - Filme" />
         <p>
             "P.S. Eu Te Amo" (2007), dirigido por Richard LaGravenese, é baseado no romance de Cecelia Ahern.
             O filme conta a história de Holly Kennedy, uma jovem devastada pela morte prematura de seu marido, Gerry.
@@ -35,6 +35,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
-    <script src="{% static 'script/theme-global.js' %}"></script>
+    <script src="../../../static/script/theme-global.js"></script>
 </body>
 </html>

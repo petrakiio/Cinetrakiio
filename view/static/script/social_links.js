@@ -5,22 +5,22 @@
   const links = [
     {
       href: 'https://www.instagram.com/pe.zrd/',
-      img: '/static/img/redes sociais/instagran.png',
+      img: '../../static/img/redes sociais/instagran.png',
       alt: 'instagram',
     },
     {
       href: 'https://www.tiktok.com/@petrakiio',
-      img: '/static/img/redes sociais/tik tok.webp',
+      img: '../../static/img/redes sociais/tik tok.webp',
       alt: 'tiktok',
     },
     {
       href: 'https://discord.com/discovery/quests#1333839522189938740',
-      img: '/static/img/redes sociais/discord.png',
+      img: '../../static/img/redes sociais/discord.png',
       alt: 'discord',
     },
     {
       href: 'https://www.linkedin.com/in/petrakiio/',
-      img: '/static/img/redes sociais/link.svg',
+      img: '../../static/img/redes sociais/link.svg',
       alt: 'linkedin',
     },
   ];
