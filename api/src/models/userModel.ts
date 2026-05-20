@@ -1,4 +1,4 @@
-import { IsEmail, IsString,IsInt, IsDate} from "class-validator";
+import { IsEmail, IsString, IsDate} from "class-validator";
 
 
 export class UserCadastro{
@@ -8,15 +8,12 @@ export class UserCadastro{
     email: string;
     @IsString()
     senha: string;
-    @IsInt()
-    numero: number;
     @IsDate()
     dataNascimento: Date;
-    constructor(nome: string, email: string, senha: string, numero: number, dataNascimento: Date){
+    constructor(nome: string, email: string, senha: string, dataNascimento: Date){
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.numero = numero;
         this.dataNascimento = dataNascimento;
     }
 }
